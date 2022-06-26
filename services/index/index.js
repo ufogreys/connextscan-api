@@ -50,8 +50,8 @@ module.exports.crud = async (params = {}) => {
     const indexer = axios.create({ baseURL: indexer_url });
     // initial auth
     const auth = {
-      username: process.env.INDEXER_USERNAME || config[environment].endpoints.indexer.username,
-      password: process.env.INDEXER_PASSWORD || config[environment].endpoints.indexer.password,
+      username: process.env.INDEXER_USERNAME,
+      password: process.env.INDEXER_PASSWORD,
     };
 
     // run method

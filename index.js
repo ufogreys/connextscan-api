@@ -82,14 +82,12 @@ exports.handler = async (event, context, callback) => {
         case 'bridge':
           switch (params.collection) {
             case 'announcement':
-              const aws_region = process.env.AWS_REGION || config?.[environment]?.bridge?.config?.aws?.region || 'us-east-1';
+              const region = process.env.REGION || 'us-east-1';
               const s3_bucket = process.env.BRIDGE_CONFIG_S3_BUCKET || config?.[environment]?.bridge?.config?.aws?.s3_bucket || 'config.bridge.connext.network';
               const s3_bucket_key = `${params.collection}${environment ? `_${environment}` : ''}.json`;
               // aws s3
               AWS.config.update({
-                accessKeyId: config?.[environment]?.bridge?.config?.aws?.access_key_id,
-                secretAccessKey: config?.[environment]?.bridge?.config?.aws?.secret_access_key,
-                region: aws_region,
+                region,
               });
               const s3 = new AWS.S3();
               switch (path) {
@@ -111,7 +109,7 @@ exports.handler = async (event, context, callback) => {
                   }
                   break;
                 default:
-                  res = await axios.get(`https://s3.${aws_region}.amazonaws.com/${s3_bucket}/${s3_bucket_key}`);
+                  res = await axios.get(`https://s3.${region}.amazonaws.com/${s3_bucket}/${s3_bucket_key}`);
                   break;
               };
               break;

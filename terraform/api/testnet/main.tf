@@ -110,6 +110,7 @@ resource "aws_lambda_function" "function" {
   environment {
     variables = {
       NODE_NO_WARNINGS = 1
+      REGION           = var.aws_region
       ENVIRONMENT      = var.environment
       INDEXER_URL      = "https://${aws_opensearch_domain.domain.endpoint}"
       INDEXER_USERNAME = var.indexer_username

@@ -11,35 +11,19 @@ external_api:
     ens: "https://api.thegraph.com/subgraphs/name/ensdomains/ens"
 
 mainnet:
-  endpoints:
-    indexer:
-      url: ""
-      username: ""
-      password: ""
   bridge:
     config:
       aws:
         s3_bucket: "config.bridge.connext.network"
-        access_key_id: ""
-        secret_access_key: ""
-        region: "us-east-1"
       git:
         repo: "CoinHippo-Labs/connext-bridge"
       whitelists: ""
 
 testnet:
-  endpoints:
-    indexer:
-      url: ""
-      username: ""
-      password: ""
   bridge:
     config:
       aws:
         s3_bucket: "config.bridge.connext.network"
-        access_key_id: ""
-        secret_access_key: ""
-        region: "us-east-1"
       git:
         repo: "CoinHippo-Labs/connext-bridge"
       whitelists: ""

@@ -34,9 +34,24 @@ data "aws_iam_policy_document" "policy" {
   }
 }
 
+resource "aws_iam_policy" "policy_s3" {
+  name   = "s3_policy"
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Effect   = "Allow"
+        Action   = ["s3:PutObject", "s3:PutObjectAcl", "s3:GetObject", "s3:GetObjectAcl", "s3:DeleteObject"]
+        Resource = ["*"]
+      }
+    ]
+  })
+}
+
 resource "aws_iam_role" "role" {
-  name               = "${var.project_name}-role-lambda"
-  assume_role_policy = data.aws_iam_policy_document.policy.json
+  name                = "${var.project_name}-role-lambda"
+  assume_role_policy  = data.aws_iam_policy_document.policy.json
+  managed_policy_arns = [aws_iam_policy.policy_s3.arn]
 }
 
 resource "aws_iam_policy_attachment" "attachment" {
@@ -111,6 +126,7 @@ resource "aws_lambda_function" "function" {
   environment {
     variables = {
       NODE_NO_WARNINGS = 1
+      REGION           = var.aws_region
       ENVIRONMENT      = var.environment
       INDEXER_URL      = "https://${aws_opensearch_domain.domain.endpoint}"
       INDEXER_USERNAME = var.indexer_username
