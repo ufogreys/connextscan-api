@@ -658,6 +658,7 @@ module.exports = {
       id: 'fraction',
       symbol: 'FRACTION',
       name: 'Fraction',
+      image: '/logos/assets/fraction.png',
       coingecko_id: 'fraction',
       contracts: [
         {
