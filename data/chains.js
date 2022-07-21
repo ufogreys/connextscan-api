@@ -638,7 +638,7 @@ module.exports = {
         website: 'https://goerli.net',
         coingecko_id: 'ethereum',
       },
-      {
+      /*{
         id: 'kovan',
         chain_id: 42,
         domain_id: '2221',
@@ -673,7 +673,7 @@ module.exports = {
         coingecko_id: 'ethereum',
         view_only: true,
       },
-      /*{
+      {
         id: 'binance',
         chain_id: 97,
         name: 'BNB Chain',
