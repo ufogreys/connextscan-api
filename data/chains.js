@@ -11,9 +11,9 @@ module.exports = {
           {
             chainId: '0x1',
             chainName: 'Ethereum',
-            rpcUrls: ['https://rpc.ankr.com/eth'],
+            rpcUrls: ['https://rpc.ankr.com/eth', 'https://mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161'],
             nativeCurrency: {
-              name: 'Ether',
+              name: 'Ethereum',
               symbol: 'ETH',
               decimals: 18,
             },
@@ -44,9 +44,9 @@ module.exports = {
           {
             chainId: '0x38',
             chainName: 'BNB Chain',
-            rpcUrls: ['https://rpc.ankr.com/bsc', 'https://bsc-dataseed.binance.org', 'https://bsc-dataseed1.defibit.io', 'https://bsc-dataseed1.ninicoin.io', 'https://bsc-dataseed1.binance.org'],
+            rpcUrls: ['https://rpc.ankr.com/bsc', 'https://bsc-dataseed.binance.org'],
             nativeCurrency: {
-              name: 'BNB Token',
+              name: 'BNB',
               symbol: 'BNB',
               decimals: 18,
             },
@@ -79,7 +79,7 @@ module.exports = {
             chainName: 'Polygon',
             rpcUrls: ['https://rpc.ankr.com/polygon'],
             nativeCurrency: {
-              name: 'Matic',
+              name: 'Polygon',
               symbol: 'MATIC',
               decimals: 18,
             },
@@ -110,7 +110,7 @@ module.exports = {
           {
             chainId: '0xa86a',
             chainName: 'Avalanche',
-            rpcUrls: ['https://api.avax.network/ext/bc/C/rpc', 'https://rpc.ankr.com/avalanche'],
+            rpcUrls: ['https://rpc.ankr.com/avalanche', 'https://api.avax.network/ext/bc/C/rpc'],
             nativeCurrency: {
               name: 'Avalanche',
               symbol: 'AVAX',
@@ -143,10 +143,10 @@ module.exports = {
           {
             chainId: '0xa',
             chainName: 'Optimism',
-            rpcUrls: ['https://mainnet.optimism.io'],
+            rpcUrls: ['https://rpc.ankr.com/optimism', 'https://mainnet.optimism.io'],
             nativeCurrency: {
-              name: 'Ether',
-              symbol: 'OETH',
+              name: 'Ethereum',
+              symbol: 'oETH',
               decimals: 18,
             },
             blockExplorerUrls: ['https://optimistic.etherscan.io'],
@@ -176,9 +176,9 @@ module.exports = {
           {
             chainId: '0xa4b1',
             chainName: 'Arbitrum',
-            rpcUrls: ['https://arb1.arbitrum.io/rpc', 'https://rpc.ankr.com/arbitrum'],
+            rpcUrls: ['https://rpc.ankr.com/arbitrum', 'https://arb1.arbitrum.io/rpc'],
             nativeCurrency: {
-              name: 'Arbitrum Ether',
+              name: 'Ethereum',
               symbol: 'aETH',
               decimals: 18,
             },
@@ -209,7 +209,7 @@ module.exports = {
           {
             chainId: '0xfa',
             chainName: 'Fantom',
-            rpcUrls: ['https://rpc.ftm.tools', 'https://rpc.ankr.com/fantom', 'https://rpcapi.fantom.network'],
+            rpcUrls: ['https://rpc.ankr.com/fantom', 'https://rpc.ftm.tools'],
             nativeCurrency: {
               name: 'Fantom',
               symbol: 'FTM',
@@ -277,9 +277,9 @@ module.exports = {
           {
             chainId: '0x504',
             chainName: 'Moonbeam',
-            rpcUrls: ['https://rpc.api.moonbeam.network', 'https://rpc.ankr.com/moonbeam'],
+            rpcUrls: ['https://rpc.ankr.com/moonbeam', 'https://rpc.api.moonbeam.network'],
             nativeCurrency: {
-              name: 'Glimmer',
+              name: 'Moonbeam',
               symbol: 'GLMR',
               decimals: 18,
             },
@@ -345,7 +345,7 @@ module.exports = {
             chainName: 'Fuse',
             rpcUrls: ['https://rpc.fuse.io'],
             nativeCurrency: {
-              name: 'Fuse Token',
+              name: 'Fuse',
               symbol: 'FUSE',
               decimals: 18,
             },
@@ -542,7 +542,7 @@ module.exports = {
       //     {
       //       chainId: '0x120',
       //       chainName: 'Harmony',
-      //       rpcUrls: ['https://api.harmony.one', 'https://rpc.ankr.com/harmony'],
+      //       rpcUrls: ['https://rpc.ankr.com/harmony', 'https://api.harmony.one'],
       //       nativeCurrency: {
       //         name: 'One',
       //         symbol: 'ONE',
@@ -582,8 +582,8 @@ module.exports = {
             chainName: 'Ethereum Rinkeby',
             rpcUrls: ['https://rinkeby.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161'],
             nativeCurrency: {
-              name: 'Rinkeby Ether',
-              symbol: 'RIN',
+              name: 'Ethereum',
+              symbol: 'ETH',
               decimals: 18,
             },
             blockExplorerUrls: ['https://rinkeby.etherscan.io'],
@@ -616,8 +616,8 @@ module.exports = {
             chainName: 'Ethereum Görli',
             rpcUrls: ['https://goerli.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161'],
             nativeCurrency: {
-              name: 'Görli Ether',
-              symbol: 'GOR',
+              name: 'Ethereum',
+              symbol: 'ETH',
               decimals: 18,
             },
             blockExplorerUrls: ['https://goerli.etherscan.io'],
@@ -650,8 +650,8 @@ module.exports = {
             chainName: 'Ethereum Kovan',
             rpcUrls: ['https://kovan.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161'],
             nativeCurrency: {
-              name: 'Kovan Ether',
-              symbol: 'KOV',
+              name: 'Ethereum',
+              symbol: 'ETH',
               decimals: 18,
             },
             blockExplorerUrls: ['https://kovan.etherscan.io'],
@@ -684,7 +684,7 @@ module.exports = {
             chainName: 'BNB Chain Testnet',
             rpcUrls: ['https://data-seed-prebsc-1-s1.binance.org:8545', 'https://data-seed-prebsc-2-s1.binance.org:8545', 'https://data-seed-prebsc-1-s2.binance.org:8545'],
             nativeCurrency: {
-              name: 'BNB Token',
+              name: 'BNB',
               symbol: 'BNB',
               decimals: 18,
             },
@@ -709,15 +709,15 @@ module.exports = {
       /*{
         id: 'mumbai',
         chain_id: 80001,
-        name: 'Polygon Mumbai',
+        name: 'Polygon',
         short_name: 'MUM',
         provider_params: [
           {
             chainId: '0x13881',
             chainName: 'Polygon Mumbai',
-            rpcUrls: ['https://rpc-mumbai.matic.today', 'https://matic-mumbai.chainstacklabs.com'],
+            rpcUrls: ['https://polygon-mumbai.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161', 'https://matic-mumbai.chainstacklabs.com'],
             nativeCurrency: {
-              name: 'Matic',
+              name: 'Polygon',
               symbol: 'MATIC',
               decimals: 18,
             },
@@ -742,7 +742,7 @@ module.exports = {
       /*{
         id: 'optimism',
         chain_id: 69,
-        name: 'Optimism Kovan',
+        name: 'Optimism',
         short_name: 'OPT',
         provider_params: [
           {
@@ -750,8 +750,8 @@ module.exports = {
             chainName: 'Optimism Kovan',
             rpcUrls: ['https://kovan.optimism.io'],
             nativeCurrency: {
-              name: 'Ether',
-              symbol: 'ETH',
+              name: 'Ethereum',
+              symbol: 'oETH',
               decimals: 18,
             },
             blockExplorerUrls: ['https://kovan-optimistic.etherscan.io'],
@@ -775,7 +775,7 @@ module.exports = {
       /*{
         id: 'arbitrum',
         chain_id: 421611,
-        name: 'Arbitrum Rinkeby',
+        name: 'Arbitrum',
         short_name: 'ARB',
         provider_params: [
           {
@@ -783,7 +783,7 @@ module.exports = {
             chainName: 'Arbitrum Rinkeby',
             rpcUrls: ['https://rinkeby.arbitrum.io/rpc'],
             nativeCurrency: {
-              name: 'Arbitrum Ether',
+              name: 'Ethereum',
               symbol: 'aETH',
               decimals: 18,
             },
@@ -809,7 +809,7 @@ module.exports = {
         id: 'moonbase',
         chain_id: 1287,
         domain_id: '5000',
-        name: 'Moonbase Alpha',
+        name: 'Moonbase',
         short_name: 'MBASE',
         provider_params: [
           {
@@ -842,7 +842,7 @@ module.exports = {
       /*{
         id: 'kava',
         chain_id: 2221,
-        name: 'Kava Alphanet',
+        name: 'Kava',
         short_name: 'KAVA',
         provider_params: [
           {
