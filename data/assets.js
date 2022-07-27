@@ -718,5 +718,27 @@ module.exports = {
         },*/
       ],
     },
+    {
+      id: 'eth',
+      symbol: 'ETH',
+      name: 'Ethereum',
+      image: '/logos/assets/eth.png',
+      coingecko_id: 'ethereum',
+      contracts: [
+        {
+          contract_address: '0x76c4bfd2e8bf127f77adb986a17c7be1f63ee103',
+          chain_id: 4,
+          contract_decimals: 18,
+          symbol: 'madWETH',
+          is_pool: true,
+        },
+        {
+          contract_address: '0xb4fbf271143f4fbf7b91a5ded31805e42b2208d6',
+          chain_id: 5,
+          contract_decimals: 18,
+          symbol: 'WETH',
+        },
+      ],
+    },
   ],
 };
