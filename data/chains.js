@@ -104,6 +104,7 @@ module.exports = {
       {
         id: 'avalanche',
         chain_id: 43114,
+        domain_id: '1635148152',
         name: 'Avalanche',
         short_name: 'AVAX',
         provider_params: [
@@ -470,6 +471,7 @@ module.exports = {
       {
         id: 'evmos',
         chain_id: 9001,
+        domain_id: '1702260083',
         name: 'Evmos',
         short_name: 'EVMOS',
         provider_params: [
@@ -706,9 +708,10 @@ module.exports = {
         website: 'https://bnbchain.world',
         coingecko_id: 'binancecoin',
       },*/
-      /*{
+      {
         id: 'mumbai',
         chain_id: 80001,
+        domain_id: '9991',
         name: 'Polygon',
         short_name: 'MUM',
         provider_params: [
@@ -738,7 +741,7 @@ module.exports = {
         color: '#8247e5',
         website: 'https://polygon.technology',
         coingecko_id: 'matic-network',
-      },*/
+      },
       /*{
         id: 'optimism',
         chain_id: 69,

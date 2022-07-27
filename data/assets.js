@@ -705,17 +705,26 @@ module.exports = {
           contract_address: '0x3FFc03F05D1869f493c7dbf913E636C6280e0ff9',
           chain_id: 4,
           decimals: 18,
+          symbol: 'madTEST',
         },
         {
           contract_address: '0x26FE8a8f86511d678d031a022E48FfF41c6a3e3b',
           chain_id: 5,
           decimals: 18,
+          symbol: 'madTEST',
         },
         /*{
           contract_address: '0x3FFc03F05D1869f493c7dbf913E636C6280e0ff9',
           chain_id: 42,
           decimals: 18,
+          symbol: 'madTEST',
         },*/
+        {
+          contract_address: '0x21c5a4dAeAf9625c781Aa996E9229eA95EE4Ff77',
+          chain_id: 80001,
+          decimals: 18,
+          symbol: 'madTEST',
+        },
       ],
     },
     {
