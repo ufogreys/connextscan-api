@@ -62,7 +62,7 @@ resource "aws_iam_policy_attachment" "attachment" {
 
 resource "aws_opensearch_domain" "domain" {
   domain_name     = "${var.project_name}-${var.environment}"
-  engine_version  = "OpenSearch_1.2"
+  engine_version  = "OpenSearch_1.3"
   cluster_config {
     instance_type            = "t3.medium.search"
     instance_count           = 1
