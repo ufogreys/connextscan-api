@@ -11,7 +11,10 @@ module.exports = {
           {
             chainId: '0x1',
             chainName: 'Ethereum',
-            rpcUrls: ['https://rpc.ankr.com/eth', 'https://mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161'],
+            rpcUrls: [
+              'https://rpc.ankr.com/eth',
+              'https://mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161',
+            ],
             nativeCurrency: {
               name: 'Ethereum',
               symbol: 'ETH',
@@ -44,7 +47,10 @@ module.exports = {
           {
             chainId: '0x38',
             chainName: 'BNB Chain',
-            rpcUrls: ['https://rpc.ankr.com/bsc', 'https://bsc-dataseed.binance.org'],
+            rpcUrls: [
+              'https://rpc.ankr.com/bsc',
+              'https://bsc-dataseed.binance.org',
+            ],
             nativeCurrency: {
               name: 'BNB',
               symbol: 'BNB',
@@ -77,7 +83,9 @@ module.exports = {
           {
             chainId: '0x89',
             chainName: 'Polygon',
-            rpcUrls: ['https://rpc.ankr.com/polygon'],
+            rpcUrls: [
+              'https://rpc.ankr.com/polygon',
+            ],
             nativeCurrency: {
               name: 'Polygon',
               symbol: 'MATIC',
@@ -111,7 +119,10 @@ module.exports = {
           {
             chainId: '0xa86a',
             chainName: 'Avalanche',
-            rpcUrls: ['https://rpc.ankr.com/avalanche', 'https://api.avax.network/ext/bc/C/rpc'],
+            rpcUrls: [
+              'https://rpc.ankr.com/avalanche',
+              'https://api.avax.network/ext/bc/C/rpc',
+            ],
             nativeCurrency: {
               name: 'Avalanche',
               symbol: 'AVAX',
@@ -144,7 +155,10 @@ module.exports = {
           {
             chainId: '0xa',
             chainName: 'Optimism',
-            rpcUrls: ['https://rpc.ankr.com/optimism', 'https://mainnet.optimism.io'],
+            rpcUrls: [
+              'https://rpc.ankr.com/optimism',
+              'https://mainnet.optimism.io',
+            ],
             nativeCurrency: {
               name: 'Ethereum',
               symbol: 'oETH',
@@ -177,7 +191,10 @@ module.exports = {
           {
             chainId: '0xa4b1',
             chainName: 'Arbitrum',
-            rpcUrls: ['https://rpc.ankr.com/arbitrum', 'https://arb1.arbitrum.io/rpc'],
+            rpcUrls: [
+              'https://rpc.ankr.com/arbitrum',
+              'https://arb1.arbitrum.io/rpc',
+            ],
             nativeCurrency: {
               name: 'Ethereum',
               symbol: 'aETH',
@@ -210,7 +227,9 @@ module.exports = {
           {
             chainId: '0xa4ba',
             chainName: 'Arbitrum Nova',
-            rpcUrls: ['https://nova.arbitrum.io/rpc'],
+            rpcUrls: [
+              'https://nova.arbitrum.io/rpc',
+            ],
             nativeCurrency: {
               name: 'Ethereum',
               symbol: 'aETH',
@@ -229,7 +248,7 @@ module.exports = {
           contract_0_path: '/address/{address}',
           transaction_path: '/tx/{tx}',
         },
-        image: '/logos/chains/arbitrum.png',
+        image: '/logos/chains/nova.png',
         color: '#28a0f0',
         website: 'https://arbitrum.io',
         coingecko_id: 'arbitrum',
@@ -243,7 +262,10 @@ module.exports = {
           {
             chainId: '0xfa',
             chainName: 'Fantom',
-            rpcUrls: ['https://rpc.ankr.com/fantom', 'https://rpc.ftm.tools'],
+            rpcUrls: [
+              'https://rpc.ankr.com/fantom',
+              'https://rpc.ftm.tools',
+            ],
             nativeCurrency: {
               name: 'Fantom',
               symbol: 'FTM',
@@ -277,19 +299,21 @@ module.exports = {
           {
             chainId: '0x64',
             chainName: 'Gnosis',
-            rpcUrls: ['https://rpc.ankr.com/gnosis'],
+            rpcUrls: [
+              'https://rpc.ankr.com/gnosis',
+            ],
             nativeCurrency: {
               name: 'xDAI',
               symbol: 'xDAI',
               decimals: 18,
             },
-            blockExplorerUrls: ['https://blockscout.com/xdai/mainnet/'],
+            blockExplorerUrls: ['https://gnosisscan.io'],
           },
         ],
         explorer: {
-          name: 'BlockScout',
-          url: 'https://blockscout.com/xdai/mainnet',
-          icon: '/logos/explorers/blockscout.png',
+          name: 'Gnosisscan',
+          url: 'https://gnosisscan.io',
+          icon: '/logos/explorers/gnosisscan.png',
           block_path: '/block/{block}',
           address_path: '/address/{address}',
           contract_path: '/token/{address}',
@@ -311,7 +335,10 @@ module.exports = {
           {
             chainId: '0x504',
             chainName: 'Moonbeam',
-            rpcUrls: ['https://rpc.ankr.com/moonbeam', 'https://rpc.api.moonbeam.network'],
+            rpcUrls: [
+              'https://rpc.ankr.com/moonbeam',
+              'https://rpc.api.moonbeam.network',
+            ],
             nativeCurrency: {
               name: 'Moonbeam',
               symbol: 'GLMR',
@@ -344,7 +371,9 @@ module.exports = {
           {
             chainId: '0x505',
             chainName: 'Moonriver',
-            rpcUrls: ['https://rpc.api.moonriver.moonbeam.network'],
+            rpcUrls: [
+              'https://rpc.api.moonriver.moonbeam.network',
+            ],
             nativeCurrency: {
               name: 'Moonriver',
               symbol: 'MOVR',
@@ -377,7 +406,9 @@ module.exports = {
           {
             chainId: '0x7a',
             chainName: 'Fuse',
-            rpcUrls: ['https://rpc.fuse.io'],
+            rpcUrls: [
+              'https://rpc.fuse.io',
+            ],
             nativeCurrency: {
               name: 'Fuse',
               symbol: 'FUSE',
@@ -410,7 +441,9 @@ module.exports = {
           {
             chainId: '0xb7e7759',
             chainName: 'Gather',
-            rpcUrls: ['https://mainnet.gather.network'],
+            rpcUrls: [
+              'https://mainnet.gather.network',
+            ],
             nativeCurrency: {
               name: 'Gather',
               symbol: 'GTH',
@@ -444,7 +477,9 @@ module.exports = {
           {
             chainId: '0x7d1',
             chainName: 'Milkomeda',
-            rpcUrls: ['https://rpc.c1.milkomeda.com:8545'],
+            rpcUrls: [
+              'https://rpc.c1.milkomeda.com:8545',
+            ],
             nativeCurrency: {
               name: 'MilkADA',
               symbol: 'mADA',
@@ -477,7 +512,9 @@ module.exports = {
           {
             chainId: '0x19',
             chainName: 'Cronos',
-            rpcUrls: ['https://evm.cronos.org'],
+            rpcUrls: [
+              'https://evm.cronos.org',
+            ],
             nativeCurrency: {
               name: 'Cronos',
               symbol: 'CRO',
@@ -511,7 +548,9 @@ module.exports = {
           {
             chainId: '0x2329',
             chainName: 'Evmos',
-            rpcUrls: ['https://eth.bd.evmos.org:8545'],
+            rpcUrls: [
+              'https://eth.bd.evmos.org:8545',
+            ],
             nativeCurrency: {
               name: 'Evmos',
               symbol: 'EVMOS',
@@ -544,7 +583,9 @@ module.exports = {
           {
             chainId: '0x120',
             chainName: 'Boba',
-            rpcUrls: ['https://mainnet.boba.network'],
+            rpcUrls: [
+              'https://mainnet.boba.network',
+            ],
             nativeCurrency: {
               name: 'Ethereum',
               symbol: 'ETH',
@@ -568,39 +609,42 @@ module.exports = {
         website: 'https://boba.network',
         coingecko_id: 'boba-network',
       },
-      // {
-      //   id: 'harmony',
-      //   chain_id: 1666600000,
-      //   name: 'Harmony',
-      //   short_name: 'HONE',
-      //   provider_params: [
-      //     {
-      //       chainId: '0x120',
-      //       chainName: 'Harmony',
-      //       rpcUrls: ['https://rpc.ankr.com/harmony', 'https://api.harmony.one'],
-      //       nativeCurrency: {
-      //         name: 'One',
-      //         symbol: 'ONE',
-      //         decimals: 18,
-      //       },
-      //       blockExplorerUrls: ['https://explorer.harmony.one'],
-      //     },
-      //   ],
-      //   explorer: {
-      //     name: 'Harmony',
-      //     url: 'https://explorer.harmony.one',
-      //     icon: '/logos/explorers/harmony.png',
-      //     block_path: '/block/{block}',
-      //     address_path: '/address/{address}',
-      //     contract_path: '/address/{address}',
-      //     contract_0_path: '/address/{address}',
-      //     transaction_path: '/tx/{tx}',
-      //   },
-      //   image: '/logos/chains/harmony.png',
-      //   color: '#42decd',
-      //   website: 'https://harmony.one',
-      //   coingecko_id: 'harmony',
-      // },
+      {
+        id: 'harmony',
+        chain_id: 1666600000,
+        name: 'Harmony',
+        short_name: 'HONE',
+        provider_params: [
+          {
+            chainId: '0x120',
+            chainName: 'Harmony',
+            rpcUrls: [
+              'https://rpc.ankr.com/harmony',
+              'https://api.harmony.one',
+            ],
+            nativeCurrency: {
+              name: 'One',
+              symbol: 'ONE',
+              decimals: 18,
+            },
+            blockExplorerUrls: ['https://explorer.harmony.one'],
+          },
+        ],
+        explorer: {
+          name: 'Harmony',
+          url: 'https://explorer.harmony.one',
+          icon: '/logos/explorers/harmony.png',
+          block_path: '/block/{block}',
+          address_path: '/address/{address}',
+          contract_path: '/address/{address}',
+          contract_0_path: '/address/{address}',
+          transaction_path: '/tx/{tx}',
+        },
+        image: '/logos/chains/harmony.png',
+        color: '#42decd',
+        website: 'https://harmony.one',
+        coingecko_id: 'harmony',
+      },
     ],
   },
   testnet: {
@@ -615,7 +659,9 @@ module.exports = {
           {
             chainId: '0x4',
             chainName: 'Ethereum Rinkeby',
-            rpcUrls: ['https://rinkeby.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161'],
+            rpcUrls: [
+              'https://rinkeby.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161',
+            ],
             nativeCurrency: {
               name: 'Ethereum',
               symbol: 'ETH',
@@ -649,7 +695,9 @@ module.exports = {
           {
             chainId: '0x5',
             chainName: 'Ethereum Görli',
-            rpcUrls: ['https://goerli.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161'],
+            rpcUrls: [
+              'https://goerli.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161',
+            ],
             nativeCurrency: {
               name: 'Ethereum',
               symbol: 'ETH',
@@ -683,7 +731,9 @@ module.exports = {
           {
             chainId: '0x2a',
             chainName: 'Ethereum Kovan',
-            rpcUrls: ['https://kovan.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161'],
+            rpcUrls: [
+              'https://kovan.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161',
+            ],
             nativeCurrency: {
               name: 'Ethereum',
               symbol: 'ETH',
@@ -717,7 +767,11 @@ module.exports = {
           {
             chainId: '0x61',
             chainName: 'BNB Chain Testnet',
-            rpcUrls: ['https://data-seed-prebsc-1-s1.binance.org:8545', 'https://data-seed-prebsc-2-s1.binance.org:8545', 'https://data-seed-prebsc-1-s2.binance.org:8545'],
+            rpcUrls: [
+              'https://data-seed-prebsc-1-s1.binance.org:8545',
+              'https://data-seed-prebsc-2-s1.binance.org:8545',
+              'https://data-seed-prebsc-1-s2.binance.org:8545',
+            ],
             nativeCurrency: {
               name: 'BNB',
               symbol: 'BNB',
@@ -751,7 +805,10 @@ module.exports = {
           {
             chainId: '0x13881',
             chainName: 'Polygon Mumbai',
-            rpcUrls: ['https://polygon-mumbai.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161', 'https://matic-mumbai.chainstacklabs.com'],
+            rpcUrls: [
+              'https://polygon-mumbai.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161',
+              'https://matic-mumbai.chainstacklabs.com',
+            ],
             nativeCurrency: {
               name: 'Polygon',
               symbol: 'MATIC',
@@ -784,7 +841,9 @@ module.exports = {
           {
             chainId: '0x45',
             chainName: 'Optimism Kovan',
-            rpcUrls: ['https://kovan.optimism.io'],
+            rpcUrls: [
+              'https://kovan.optimism.io',
+            ],
             nativeCurrency: {
               name: 'Ethereum',
               symbol: 'oETH',
@@ -807,8 +866,8 @@ module.exports = {
         color: '#dc2626',
         website: 'https://optimism.io',
         coingecko_id: 'ethereum',
-      },*/
-      /*{
+      },
+      {
         id: 'arbitrum',
         chain_id: 421611,
         name: 'Arbitrum',
@@ -817,7 +876,9 @@ module.exports = {
           {
             chainId: '0x66eeb',
             chainName: 'Arbitrum Rinkeby',
-            rpcUrls: ['https://rinkeby.arbitrum.io/rpc'],
+            rpcUrls: [
+              'https://rinkeby.arbitrum.io/rpc',
+            ],
             nativeCurrency: {
               name: 'Ethereum',
               symbol: 'aETH',
@@ -840,8 +901,8 @@ module.exports = {
         color: '#28a0f0',
         website: 'https://arbitrum.io',
         coingecko_id: 'arbitrum',
-      },*/
-      /*{
+      },
+      {
         id: 'moonbase',
         chain_id: 1287,
         domain_id: '5000',
@@ -851,7 +912,9 @@ module.exports = {
           {
             chainId: '0x507',
             chainName: 'Moonbase Alpha',
-            rpcUrls: ['https://rpc.api.moonbase.moonbeam.network'],
+            rpcUrls: [
+              'https://rpc.api.moonbase.moonbeam.network',
+            ],
             nativeCurrency: {
               name: 'Dev',
               symbol: 'DEV',
@@ -874,8 +937,8 @@ module.exports = {
         color: '#53cbc8',
         website: 'https://moonbeam.network',
         coingecko_id: 'moonbeam',
-      },*/
-      /*{
+      },
+      {
         id: 'kava',
         chain_id: 2221,
         name: 'Kava',
@@ -884,7 +947,9 @@ module.exports = {
           {
             chainId: '0x8ad',
             chainName: 'Kava Alphanet',
-            rpcUrls: ['https://evm.evm-alpha.kava.io'],
+            rpcUrls: [
+              'https://evm.evm-alpha.kava.io',
+            ],
             nativeCurrency: {
               name: 'Kava',
               symbol: 'KAVA',
