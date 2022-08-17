@@ -767,6 +767,13 @@ module.exports = {
           decimals: 18,
           symbol: 'WETH',
         },
+        {
+          contract_address: '0x4E2FCcA06dA37869047d84b82364d1831E5aa7E1',
+          chain_id: 80001,
+          decimals: 18,
+          symbol: 'madWETH',
+          is_pool: true,
+        },
       ],
     },
   ],
