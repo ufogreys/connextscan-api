@@ -686,7 +686,7 @@ module.exports = {
         coingecko_id: 'ethereum',
       },
       {
-        id: 'gorli',
+        id: 'goerli',
         chain_id: 5,
         domain_id: '1735353714',
         name: 'Görli',
@@ -716,7 +716,7 @@ module.exports = {
           contract_0_path: '/address/{address}',
           transaction_path: '/tx/{tx}',
         },
-        image: '/logos/chains/gorli.png',
+        image: '/logos/chains/goerli.png',
         color: '#c0c2c3',
         website: 'https://goerli.net',
         coingecko_id: 'ethereum',
