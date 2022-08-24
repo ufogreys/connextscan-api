@@ -688,7 +688,7 @@ module.exports = {
       {
         id: 'gorli',
         chain_id: 5,
-        domain_id: '3331',
+        domain_id: '1735353714',
         name: 'Görli',
         short_name: 'GOR',
         provider_params: [
@@ -832,29 +832,30 @@ module.exports = {
         website: 'https://polygon.technology',
         coingecko_id: 'matic-network',
       },
-      /*{
+      {
         id: 'optimism',
-        chain_id: 69,
+        chain_id: 420,
+        domain_id: '1735356532',
         name: 'Optimism',
         short_name: 'OPT',
         provider_params: [
           {
-            chainId: '0x45',
-            chainName: 'Optimism Kovan',
+            chainId: '0x1a4',
+            chainName: 'Optimism Görli',
             rpcUrls: [
-              'https://kovan.optimism.io',
+              'https://goerli.optimism.io',
             ],
             nativeCurrency: {
               name: 'Ethereum',
               symbol: 'oETH',
               decimals: 18,
             },
-            blockExplorerUrls: ['https://kovan-optimistic.etherscan.io'],
+            blockExplorerUrls: ['https://blockscout.com/optimism/goerli'],
           },
         ],
         explorer: {
-          name: 'Etherscan',
-          url: 'https://kovan-optimistic.etherscan.io',
+          name: 'Optimism',
+          url: 'https://blockscout.com/optimism/goerli',
           icon: '/logos/explorers/optimism.png',
           block_path: '/block/{block}',
           address_path: '/address/{address}',
@@ -867,7 +868,7 @@ module.exports = {
         website: 'https://optimism.io',
         coingecko_id: 'ethereum',
       },
-      {
+      /*{
         id: 'arbitrum',
         chain_id: 421611,
         name: 'Arbitrum',
