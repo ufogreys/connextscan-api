@@ -649,7 +649,7 @@ module.exports = {
   },
   testnet: {
     evm: [
-      {
+      /*{
         id: 'rinkeby',
         chain_id: 4,
         domain_id: '1111',
@@ -684,7 +684,7 @@ module.exports = {
         color: '#c0c2c3',
         website: 'https://rinkeby.io',
         coingecko_id: 'ethereum',
-      },
+      },*/
       {
         id: 'goerli',
         chain_id: 5,
@@ -795,7 +795,7 @@ module.exports = {
         website: 'https://bnbchain.world',
         coingecko_id: 'binancecoin',
       },*/
-      {
+      /*{
         id: 'mumbai',
         chain_id: 80001,
         domain_id: '9991',
@@ -831,7 +831,7 @@ module.exports = {
         color: '#8247e5',
         website: 'https://polygon.technology',
         coingecko_id: 'matic-network',
-      },
+      },*/
       {
         id: 'optimism',
         chain_id: 420,
