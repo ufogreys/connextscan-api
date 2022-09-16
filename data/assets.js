@@ -740,7 +740,7 @@ module.exports = {
           symbol: 'TEST',
         },*/
         {
-          contract_address: '0x21c5a4dAeAf9625c781Aa996E9229eA95EE4Ff77',
+          contract_address: '0xeDb95D8037f769B72AAab41deeC92903A98C9E16',
           chain_id: 80001,
           decimals: 18,
           symbol: 'TEST',
@@ -773,16 +773,16 @@ module.exports = {
           symbol: 'WETH',
         },
         {
-          contract_address: '0xA6FA4fB5f76172d178d61B04b0ecd319C5d1C0aa',
+          contract_address: '0x1E5341E4b7ed5D0680d9066aac0396F0b1bD1E69',
           chain_id: 80001,
           decimals: 18,
           symbol: 'WETH',
         },
         {
-          contract_address: '0x6dC42a10F89Da5dAE486De606B1Dc4d8C5Ed1bfE',
+          contract_address: '0x39B061B7e41DE8B721f9aEcEB6b3f17ECB7ba63E',
           chain_id: 420,
           decimals: 18,
-          symbol: 'madWETH',
+          symbol: 'nextWETH',
           is_pool: true,
         },
       ],

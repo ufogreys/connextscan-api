@@ -795,12 +795,12 @@ module.exports = {
         website: 'https://bnbchain.world',
         coingecko_id: 'binancecoin',
       },*/
-      /*{
-        id: 'mumbai',
+      {
+        id: 'polygon',
         chain_id: 80001,
         domain_id: '9991',
         name: 'Polygon',
-        short_name: 'MUM',
+        short_name: 'MATIC',
         provider_params: [
           {
             chainId: '0x13881',
@@ -827,11 +827,11 @@ module.exports = {
           contract_0_path: '/address/{address}',
           transaction_path: '/tx/{tx}',
         },
-        image: '/logos/chains/mumbai.png',
+        image: '/logos/chains/polygon.png',
         color: '#8247e5',
         website: 'https://polygon.technology',
         coingecko_id: 'matic-network',
-      },*/
+      },
       {
         id: 'optimism',
         chain_id: 420,
