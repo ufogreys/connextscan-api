@@ -688,7 +688,7 @@ module.exports = {
   testnet: {
     evm: [
       {
-        id: 'goerli',
+        id: 'ethereum',
         chain_id: 5,
         domain_id: '1735353714',
         name: 'Ethereum',
