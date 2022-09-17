@@ -82,7 +82,7 @@ module.exports = async (
       const asset_data = assets_data.find(_a =>
         _a?.contracts?.findIndex(c =>
           c?.chain_id === chain_id &&
-          equals_ignore_case(c.contract_address, _a)
+          equals_ignore_case(c.contract_address, a)
         ) > -1
       );
 
@@ -257,6 +257,8 @@ module.exports = async (
         },
       );
     });
+
+    response = data;
   }
 
   return response;
