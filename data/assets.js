@@ -722,23 +722,11 @@ module.exports = {
       is_stablecoin: true,
       contracts: [
         {
-          contract_address: '0x3FFc03F05D1869f493c7dbf913E636C6280e0ff9',
-          chain_id: 4,
-          decimals: 18,
-          symbol: 'TEST',
-        },
-        {
           contract_address: '0x7ea6eA49B0b0Ae9c5db7907d139D9Cd3439862a1',
           chain_id: 5,
           decimals: 18,
           symbol: 'TEST',
         },
-        /*{
-          contract_address: '0x3FFc03F05D1869f493c7dbf913E636C6280e0ff9',
-          chain_id: 42,
-          decimals: 18,
-          symbol: 'TEST',
-        },*/
         {
           contract_address: '0xeDb95D8037f769B72AAab41deeC92903A98C9E16',
           chain_id: 80001,
@@ -760,12 +748,6 @@ module.exports = {
       image: '/logos/assets/eth.png',
       coingecko_id: 'ethereum',
       contracts: [
-        {
-          contract_address: '0xc778417E063141139Fce010982780140Aa0cD5Ab',
-          chain_id: 4,
-          decimals: 18,
-          symbol: 'WETH',
-        },
         {
           contract_address: '0xB4FBF271143F4FBf7B91A5ded31805e42b2208d6',
           chain_id: 5,

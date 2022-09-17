@@ -20,7 +20,9 @@ module.exports = {
               symbol: 'ETH',
               decimals: 18,
             },
-            blockExplorerUrls: ['https://etherscan.io'],
+            blockExplorerUrls: [
+              'https://etherscan.io',
+            ],
           },
         ],
         explorer: {
@@ -49,14 +51,16 @@ module.exports = {
             chainName: 'BNB Chain',
             rpcUrls: [
               'https://rpc.ankr.com/bsc',
-              'https://bsc-dataseed.binance.org',
+              'https://bscrpc.com',
             ],
             nativeCurrency: {
               name: 'BNB',
               symbol: 'BNB',
               decimals: 18,
             },
-            blockExplorerUrls: ['https://bscscan.com'],
+            blockExplorerUrls: [
+              'https://bscscan.com',
+            ],
           },
         ],
         explorer: {
@@ -85,13 +89,17 @@ module.exports = {
             chainName: 'Polygon',
             rpcUrls: [
               'https://rpc.ankr.com/polygon',
+              'https://matic-mainnet.chainstacklabs.com',
+              'https://polygon-rpc.com',
             ],
             nativeCurrency: {
               name: 'Polygon',
               symbol: 'MATIC',
               decimals: 18,
             },
-            blockExplorerUrls: ['https://polygonscan.com'],
+            blockExplorerUrls: [
+              'https://polygonscan.com',
+            ],
           },
         ],
         explorer: {
@@ -128,7 +136,9 @@ module.exports = {
               symbol: 'AVAX',
               decimals: 18,
             },
-            blockExplorerUrls: ['https://snowtrace.io'],
+            blockExplorerUrls: [
+              'https://snowtrace.io',
+            ],
           },
         ],
         explorer: {
@@ -164,7 +174,9 @@ module.exports = {
               symbol: 'oETH',
               decimals: 18,
             },
-            blockExplorerUrls: ['https://optimistic.etherscan.io'],
+            blockExplorerUrls: [
+              'https://optimistic.etherscan.io',
+            ],
           },
         ],
         explorer: {
@@ -200,7 +212,9 @@ module.exports = {
               symbol: 'aETH',
               decimals: 18,
             },
-            blockExplorerUrls: ['https://arbiscan.io'],
+            blockExplorerUrls: [
+              'https://arbiscan.io',
+            ],
           },
         ],
         explorer: {
@@ -235,7 +249,9 @@ module.exports = {
               symbol: 'aETH',
               decimals: 18,
             },
-            blockExplorerUrls: ['https://nova-explorer.arbitrum.io'],
+            blockExplorerUrls: [
+              'https://nova-explorer.arbitrum.io',
+            ],
           },
         ],
         explorer: {
@@ -271,7 +287,9 @@ module.exports = {
               symbol: 'FTM',
               decimals: 18,
             },
-            blockExplorerUrls: ['https://ftmscan.com'],
+            blockExplorerUrls: [
+              'https://ftmscan.com',
+            ],
           },
         ],
         explorer: {
@@ -307,7 +325,9 @@ module.exports = {
               symbol: 'xDAI',
               decimals: 18,
             },
-            blockExplorerUrls: ['https://gnosisscan.io'],
+            blockExplorerUrls: [
+              'https://gnosisscan.io',
+            ],
           },
         ],
         explorer: {
@@ -344,7 +364,9 @@ module.exports = {
               symbol: 'GLMR',
               decimals: 18,
             },
-            blockExplorerUrls: ['https://moonscan.io'],
+            blockExplorerUrls: [
+              'https://moonscan.io',
+            ],
           },
         ],
         explorer: {
@@ -379,7 +401,9 @@ module.exports = {
               symbol: 'MOVR',
               decimals: 18,
             },
-            blockExplorerUrls: ['https://moonriver.moonscan.io'],
+            blockExplorerUrls: [
+              'https://moonriver.moonscan.io',
+            ],
           },
         ],
         explorer: {
@@ -414,7 +438,9 @@ module.exports = {
               symbol: 'FUSE',
               decimals: 18,
             },
-            blockExplorerUrls: ['https://explorer.fuse.io'],
+            blockExplorerUrls: [
+              'https://explorer.fuse.io',
+            ],
           },
         ],
         explorer: {
@@ -449,7 +475,9 @@ module.exports = {
               symbol: 'GTH',
               decimals: 18,
             },
-            blockExplorerUrls: ['https://explorer.gather.network'],
+            blockExplorerUrls: [
+              'https://explorer.gather.network',
+            ],
           },
         ],
         explorer: {
@@ -485,7 +513,9 @@ module.exports = {
               symbol: 'mADA',
               decimals: 18,
             },
-            blockExplorerUrls: ['https://rpc.c1.milkomeda.com:4000'],
+            blockExplorerUrls: [
+              'https://rpc.c1.milkomeda.com:4000',
+            ],
           },
         ],
         explorer: {
@@ -520,7 +550,9 @@ module.exports = {
               symbol: 'CRO',
               decimals: 18,
             },
-            blockExplorerUrls: ['https://cronoscan.com'],
+            blockExplorerUrls: [
+              'https://cronoscan.com',
+            ],
           },
         ],
         explorer: {
@@ -556,7 +588,9 @@ module.exports = {
               symbol: 'EVMOS',
               decimals: 18,
             },
-            blockExplorerUrls: ['https://evm.evmos.org'],
+            blockExplorerUrls: [
+              'https://evm.evmos.org',
+            ],
           },
         ],
         explorer: {
@@ -591,7 +625,9 @@ module.exports = {
               symbol: 'ETH',
               decimals: 18,
             },
-            blockExplorerUrls: ['https://blockexplorer.boba.network'],
+            blockExplorerUrls: [
+              'https://blockexplorer.boba.network',
+            ],
           },
         ],
         explorer: {
@@ -627,7 +663,9 @@ module.exports = {
               symbol: 'ONE',
               decimals: 18,
             },
-            blockExplorerUrls: ['https://explorer.harmony.one'],
+            blockExplorerUrls: [
+              'https://explorer.harmony.one',
+            ],
           },
         ],
         explorer: {
@@ -649,52 +687,16 @@ module.exports = {
   },
   testnet: {
     evm: [
-      /*{
-        id: 'rinkeby',
-        chain_id: 4,
-        domain_id: '1111',
-        name: 'Rinkeby',
-        short_name: 'RIN',
-        provider_params: [
-          {
-            chainId: '0x4',
-            chainName: 'Ethereum Rinkeby',
-            rpcUrls: [
-              'https://rinkeby.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161',
-            ],
-            nativeCurrency: {
-              name: 'Ethereum',
-              symbol: 'ETH',
-              decimals: 18,
-            },
-            blockExplorerUrls: ['https://rinkeby.etherscan.io'],
-          },
-        ],
-        explorer: {
-          name: 'Etherscan',
-          url: 'https://rinkeby.etherscan.io',
-          icon: '/logos/explorers/etherscan.png',
-          block_path: '/block/{block}',
-          address_path: '/address/{address}',
-          contract_path: '/token/{address}',
-          contract_0_path: '/address/{address}',
-          transaction_path: '/tx/{tx}',
-        },
-        image: '/logos/chains/rinkeby.png',
-        color: '#c0c2c3',
-        website: 'https://rinkeby.io',
-        coingecko_id: 'ethereum',
-      },*/
       {
         id: 'goerli',
         chain_id: 5,
         domain_id: '1735353714',
-        name: 'Görli',
+        name: 'Ethereum',
         short_name: 'GOR',
         provider_params: [
           {
             chainId: '0x5',
-            chainName: 'Ethereum Görli',
+            chainName: 'Ethereum Goerli',
             rpcUrls: [
               'https://goerli.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161',
             ],
@@ -703,7 +705,9 @@ module.exports = {
               symbol: 'ETH',
               decimals: 18,
             },
-            blockExplorerUrls: ['https://goerli.etherscan.io'],
+            blockExplorerUrls: [
+              'https://goerli.etherscan.io',
+            ],
           },
         ],
         explorer: {
@@ -722,43 +726,6 @@ module.exports = {
         coingecko_id: 'ethereum',
       },
       /*{
-        id: 'kovan',
-        chain_id: 42,
-        domain_id: '2221',
-        name: 'Kovan',
-        short_name: 'KOV',
-        provider_params: [
-          {
-            chainId: '0x2a',
-            chainName: 'Ethereum Kovan',
-            rpcUrls: [
-              'https://kovan.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161',
-            ],
-            nativeCurrency: {
-              name: 'Ethereum',
-              symbol: 'ETH',
-              decimals: 18,
-            },
-            blockExplorerUrls: ['https://kovan.etherscan.io'],
-          },
-        ],
-        explorer: {
-          name: 'Etherscan',
-          url: 'https://kovan.etherscan.io',
-          icon: '/logos/explorers/etherscan.png',
-          block_path: '/block/{block}',
-          address_path: '/address/{address}',
-          contract_path: '/token/{address}',
-          contract_0_path: '/address/{address}',
-          transaction_path: '/tx/{tx}',
-        },
-        image: '/logos/chains/kovan.png',
-        color: '#c0c2c3',
-        website: 'https://kovan-testnet.github.io/website',
-        coingecko_id: 'ethereum',
-        view_only: true,
-      },
-      {
         id: 'binance',
         chain_id: 97,
         name: 'BNB Chain',
@@ -777,7 +744,9 @@ module.exports = {
               symbol: 'BNB',
               decimals: 18,
             },
-            blockExplorerUrls: ['https://testnet.bscscan.com'],
+            blockExplorerUrls: [
+              'https://testnet.bscscan.com',
+            ],
           },
         ],
         explorer: {
@@ -814,7 +783,9 @@ module.exports = {
               symbol: 'MATIC',
               decimals: 18,
             },
-            blockExplorerUrls: ['https://mumbai.polygonscan.com'],
+            blockExplorerUrls: [
+              'https://mumbai.polygonscan.com',
+            ],
           },
         ],
         explorer: {
@@ -841,7 +812,7 @@ module.exports = {
         provider_params: [
           {
             chainId: '0x1a4',
-            chainName: 'Optimism Görli',
+            chainName: 'Optimism Goerli',
             rpcUrls: [
               'https://goerli.optimism.io',
             ],
@@ -850,7 +821,9 @@ module.exports = {
               symbol: 'oETH',
               decimals: 18,
             },
-            blockExplorerUrls: ['https://blockscout.com/optimism/goerli'],
+            blockExplorerUrls: [
+              'https://blockscout.com/optimism/goerli',
+            ],
           },
         ],
         explorer: {
@@ -885,7 +858,9 @@ module.exports = {
               symbol: 'aETH',
               decimals: 18,
             },
-            blockExplorerUrls: ['https://rinkeby-explorer.arbitrum.io/#/'],
+            blockExplorerUrls: [
+              'https://rinkeby-explorer.arbitrum.io/#/',
+            ],
           },
         ],
         explorer: {
@@ -921,7 +896,9 @@ module.exports = {
               symbol: 'DEV',
               decimals: 18,
             },
-            blockExplorerUrls: ['https://moonbase.moonscan.io'],
+            blockExplorerUrls: [
+              'https://moonbase.moonscan.io',
+            ],
           },
         ],
         explorer: {
@@ -956,7 +933,9 @@ module.exports = {
               symbol: 'KAVA',
               decimals: 18,
             },
-            blockExplorerUrls: ['https://explorer.evm-alpha.kava.io'],
+            blockExplorerUrls: [
+              'https://explorer.evm-alpha.kava.io',
+            ],
           },
         ],
         explorer: {

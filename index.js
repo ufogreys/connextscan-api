@@ -1,141 +1,244 @@
-exports.handler = async (event, context, callback) => {
-  // import module for http request
+exports.handler = async (
+  event,
+  context,
+  callback,
+) => {
   const axios = require('axios');
-  // import lodash
   const _ = require('lodash');
-  // import aws sdk
   const AWS = require('aws-sdk');
-  // import config
   const config = require('config-yml');
-  // import tokens
-  const tokens = require('./services/tokens');
-  // import index
-  const { crud } = require('./services/index');
-  // import utils
-  const { get_params } = require('./utils');
-  // data
-  const { chains, assets } = require('./data');
+  const {
+    crud,
+  } = require('./services/index');
+  const assets_price = require('./services/assets-price');
+  const coingecko = require('./services/coingecko');
+  const ens = require('./services/ens');
+  const {
+    get_params,
+  } = require('./utils');
 
-  // initial environment
-  const environment = process.env.ENVIRONMENT || config?.environment;
+  let {
+    environment,
+  } = { ...config };
+
+  environment = process.env.ENVIRONMENT ||
+    environment;
+
+  const evm_chains_data = require('./data')?.chains?.[environment]?.evm ||
+    [];
+  const assets_data = require('./data')?.assets?.[environment] ||
+    [];
 
   // parse function event to req
   const req = {
-    body: (event.body && JSON.parse(event.body)) || {},
-    query: event.queryStringParameters || {},
-    params: event.pathParameters || {},
+    body: {
+      ...(
+        event.body &&
+        JSON.parse(event.body)
+      ),
+    },
+    query: {
+      ...event.queryStringParameters,
+    },
+    params: {
+      ...event.pathParameters,
+    },
     method: event.requestContext?.http?.method,
     url: event.routeKey?.replace('ANY ', ''),
     headers: event.headers,
   };
-
-  // initial response
-  let response;
-  // initial params
   const params = get_params(req);
 
-  // handle api routes
+  let response;
+
   switch (req.url) {
     case '/':
-      // initial module
-      const _module = params.module?.trim().toLowerCase();
-      delete params.module;
+      const {
+        collection,
+      } = { ...params };
+      let {
+        path,
+        data,
+      } = { ...params };
 
-      // initial path
-      let path = params.path || '';
+      const _module = params.module?.trim().toLowerCase();
+      path = path ||
+        '';
+
+      delete params.module;
       delete params.path;
 
-      // initial variables
-      let res;
-
-      // run each module
       switch (_module) {
-        case 'tokens':
-          res = { data: await tokens(params) };
-          break;
         case 'index':
-          res = { data: await crud(params) };
+          try {
+            response = await crud(params);
+          } catch (error) {
+            response = {
+              error: true,
+              code: 400,
+              message: error?.message,
+            };
+          }
+          break;
+        case 'assets':
+        case 'tokens':
+          try {
+            response = await assets_price(params);
+          } catch (error) {
+            response = {
+              error: true,
+              code: 400,
+              message: error?.message,
+            };
+          }
           break;
         case 'coingecko':
-          if (config?.external_api?.endpoints?.coingecko) {
-            const coingecko = axios.create({ baseURL: config.external_api.endpoints.coingecko });
-            // request coingecko
-            res = await coingecko.get(path, { params })
-              .catch(error => { return { data: { error } }; });
+          try {
+            response = await coingecko(
+              path,
+              params,
+            );
+          } catch (error) {
+            response = {
+              error: true,
+              code: 400,
+              message: error?.message,
+            };
           }
           break;
         case 'ens':
-          if (config?.external_api?.endpoints?.ens) {
-            const ens = axios.create({ baseURL: config.external_api.endpoints.ens });
-            // request ens
-            res = await ens.get(path, { params })
-              .catch(error => { return { data: { error } }; });
+          try {
+            response = await ens(
+              path,
+              params,
+            );
+          } catch (error) {
+            response = {
+              error: true,
+              code: 400,
+              message: error?.message,
+            };
           }
           break;
         case 'data':
-          let data = { chains: chains?.[environment], assets: assets?.[environment] };
-          if (data[params.collection]) {
-            data = data[params.collection];
-          }
-          res = { data };
+          switch (collection) {
+            case 'chains':
+              response = require('./data')?.chains?.[environment];
+              break;
+            case 'evm_chains':
+              response = evm_chains_data;
+              break;
+            case 'assets':
+              response = assets_data;
+              break;
+          };
           break;
         case 'bridge':
-          switch (params.collection) {
+          const {
+            bridge,
+          } = { ...config?.[environment] };
+
+          switch (collection) {
             case 'announcement':
-              const region = process.env.REGION || 'us-east-1';
-              const s3_bucket = process.env.BRIDGE_CONFIG_S3_BUCKET || config?.[environment]?.bridge?.config?.aws?.s3_bucket || 'config.bridge.connext.network';
-              const s3_bucket_key = `${params.collection}${environment ? `_${environment}` : ''}.json`;
+              const region = process.env.REGION ||
+                'us-east-1';
+              const s3_bucket = process.env.BRIDGE_CONFIG_S3_BUCKET ||
+                bridge?.config?.aws?.s3_bucket ||
+                'config.bridge.connext.network';
+              const s3_bucket_key = `${collection}${environment ? `_${environment}` : ''}.json`;
+
               // aws s3
               AWS.config.update({
                 region,
               });
               const s3 = new AWS.S3();
+
               switch (path) {
                 case '/set':
-                  const [username, password] = req.headers.authorization ? Buffer.from(req.headers.authorization, 'base64').toString().split(':') : [];
-                  const whitelists = _.uniq((process.env.WHITELISTS || config?.[environment]?.bridge?.config?.whitelists)?.split(',').map(a => a?.trim().toLowerCase()).filter(a => a) || []);
+                  const [
+                    username,
+                    password,
+                  ] = req.headers.authorization ?
+                    Buffer.from(
+                      req.headers.authorization,
+                      'base64',
+                    )
+                    .toString()
+                    .split(':') :
+                    [];
+
+                  const whitelists = _.uniq(
+                    (
+                      process.env.WHITELISTS ||
+                      bridge?.config?.whitelists ||
+                      ''
+                    )
+                    .split(',')
+                    .map(a => a.trim().toLowerCase())
+                    .filter(a => a)
+                  );
+
                   if (whitelists.includes(password?.toLowerCase())) {
-                    const data = JSON.stringify({ data: params.data });
-                    res = {
-                      data: await new Promise(resolve =>
-                        s3.putObject({
+                    data = JSON.stringify(
+                      {
+                        data,
+                      }
+                    );
+
+                    response = await new Promise(resolve =>
+                      s3.putObject(
+                        {
                           Bucket: s3_bucket,
                           Key: s3_bucket_key,
                           Body: data,
-                          ACL: 'private'
-                        }, (err, data) => resolve(data?.Body ? data.Body.toString() : null))
-                      ),
-                    };
+                          ACL: 'private',
+                        },
+                        (
+                          err,
+                          data,
+                        ) =>
+                          resolve(
+                            data?.Body ?
+                              data.Body.toString() :
+                              null
+                          )
+                      )
+                    );
                   }
                   break;
                 default:
-                  res = await axios.get(`https://s3.${region}.amazonaws.com/${s3_bucket}/${s3_bucket_key}`);
+                  const _response = await axios.get(
+                    `https://s3.${region}.amazonaws.com/${s3_bucket}/${s3_bucket_key}`,
+                  ).catch(error => { return { data: { error } }; });
+
+                  response = _response?.data;
                   break;
-              };
+              }
               break;
             default:
-              const git_repo = process.env.BRIDGE_CONFIG_GIT_REPO || config?.[environment]?.bridge?.config?.git?.repo || 'CoinHippo-Labs/connext-bridge';
-              res = await axios.get(`https://raw.githubusercontent.com/${git_repo}/main/config/${environment}/${params.collection}.json`);
+              const git_repo = process.env.BRIDGE_CONFIG_GIT_REPO ||
+                bridge?.config?.git?.repo ||
+                'CoinHippo-Labs/connext-bridge';
+
+              const _response = await axios.get(
+                `https://raw.githubusercontent.com/${git_repo}/main/config/${environment}/${collection}.json`,
+              ).catch(error => { return { data: { error } }; });
+
+              response = _response?.data;
               break;
-          };
+          }
           break;
         default:
           break;
-      };
-
-      // set response
-      if (res?.data) {
-        response = res.data;
-        // remove error config
-        if (response.error?.config) {
-          delete response.error.config;
-        }
       }
       break;
    default:
       break;
-  };
+  }
 
-  // return response
+  if (response?.error?.config) {
+    delete response.error.config;
+  }
+
   return response;
 };
