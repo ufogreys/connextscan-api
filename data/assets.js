@@ -764,7 +764,7 @@ module.exports = {
           contract_address: '0x39B061B7e41DE8B721f9aEcEB6b3f17ECB7ba63E',
           chain_id: 420,
           decimals: 18,
-          symbol: 'nextWETH',
+          symbol: 'madWETH',
           is_pool: true,
         },
       ],
