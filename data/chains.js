@@ -841,17 +841,18 @@ module.exports = {
         website: 'https://optimism.io',
         coingecko_id: 'ethereum',
       },
-      /*{
+      {
         id: 'arbitrum',
-        chain_id: 421611,
+        chain_id: 421613,
+        domain_id: '1734439522',
         name: 'Arbitrum',
         short_name: 'ARB',
         provider_params: [
           {
-            chainId: '0x66eeb',
-            chainName: 'Arbitrum Rinkeby',
+            chainId: '0x66eed',
+            chainName: 'Arbitrum Goerli',
             rpcUrls: [
-              'https://rinkeby.arbitrum.io/rpc',
+              'https://goerli-rollup.arbitrum.io/rpc',
             ],
             nativeCurrency: {
               name: 'Ethereum',
@@ -859,13 +860,13 @@ module.exports = {
               decimals: 18,
             },
             blockExplorerUrls: [
-              'https://rinkeby-explorer.arbitrum.io/#/',
+              'https://goerli.arbiscan.io',
             ],
           },
         ],
         explorer: {
           name: 'Arbiscan',
-          url: 'https://testnet.arbiscan.io',
+          url: 'https://goerli.arbiscan.io',
           icon: '/logos/explorers/arbiscan.png',
           block_path: '/block/{block}',
           address_path: '/address/{address}',
@@ -878,8 +879,8 @@ module.exports = {
         website: 'https://arbitrum.io',
         coingecko_id: 'arbitrum',
       },
-      {
-        id: 'moonbase',
+      /*{
+        id: 'moonbeam',
         chain_id: 1287,
         domain_id: '5000',
         name: 'Moonbase',
@@ -915,43 +916,6 @@ module.exports = {
         color: '#53cbc8',
         website: 'https://moonbeam.network',
         coingecko_id: 'moonbeam',
-      },
-      {
-        id: 'kava',
-        chain_id: 2221,
-        name: 'Kava',
-        short_name: 'KAVA',
-        provider_params: [
-          {
-            chainId: '0x8ad',
-            chainName: 'Kava Alphanet',
-            rpcUrls: [
-              'https://evm.evm-alpha.kava.io',
-            ],
-            nativeCurrency: {
-              name: 'Kava',
-              symbol: 'KAVA',
-              decimals: 18,
-            },
-            blockExplorerUrls: [
-              'https://explorer.evm-alpha.kava.io',
-            ],
-          },
-        ],
-        explorer: {
-          name: 'Kava',
-          url: 'https://explorer.evm-alpha.kava.io',
-          icon: '/logos/explorers/kava.png',
-          block_path: '/block/{block}',
-          address_path: '/address/{address}',
-          contract_path: '/token/{address}',
-          contract_0_path: '/address/{address}',
-          transaction_path: '/tx/{tx}',
-        },
-        image: '/logos/chains/kava.png',
-        color: '#ff554f',
-        website: 'https://kava.io',
-        coingecko_id: 'kava',
       },*/
     ],
   },

@@ -739,6 +739,12 @@ module.exports = {
           decimals: 18,
           symbol: 'TEST',
         },
+        {
+          contract_address: '0xDC805eAaaBd6F68904cA706C221c72F8a8a68F9f',
+          chain_id: 421613,
+          decimals: 18,
+          symbol: 'TEST',
+        },
       ],
     },
     {
@@ -766,6 +772,12 @@ module.exports = {
           decimals: 18,
           symbol: 'nextWETH',
           is_pool: true,
+        },
+        {
+          contract_address: '0x1346786E6A5e07b90184a1Ba58E55444b99DC4A2',
+          chain_id: 421613,
+          decimals: 18,
+          symbol: 'WETH',
         },
       ],
     },
