@@ -688,10 +688,10 @@ module.exports = {
   testnet: {
     evm: [
       {
-        id: 'ethereum',
+        id: 'goerli',
         chain_id: 5,
         domain_id: '1735353714',
-        name: 'Ethereum',
+        name: 'Goerli',
         short_name: 'GOR',
         provider_params: [
           {
