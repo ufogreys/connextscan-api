@@ -841,7 +841,7 @@ module.exports = {
         website: 'https://optimism.io',
         coingecko_id: 'ethereum',
       },
-      {
+      /*{
         id: 'arbitrum',
         chain_id: 421613,
         domain_id: '1734439522',
@@ -879,7 +879,7 @@ module.exports = {
         website: 'https://arbitrum.io',
         coingecko_id: 'arbitrum',
       },
-      /*{
+      {
         id: 'moonbeam',
         chain_id: 1287,
         domain_id: '5000',

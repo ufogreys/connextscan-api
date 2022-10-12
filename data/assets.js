@@ -765,6 +765,7 @@ module.exports = {
           chain_id: 80001,
           decimals: 18,
           symbol: 'WETH',
+          is_pool: true,
         },
         {
           contract_address: '0x39B061B7e41DE8B721f9aEcEB6b3f17ECB7ba63E',
