@@ -14,7 +14,7 @@ mainnet:
   bridge:
     config:
       aws:
-        s3_bucket: "config.bridge.connext.network"
+        s3_bucket: "config.amarok.bridge.connext.network"
       git:
         repo: "CoinHippo-Labs/connext-bridge"
       whitelists: ""
@@ -23,7 +23,7 @@ testnet:
   bridge:
     config:
       aws:
-        s3_bucket: "config.bridge.connext.network"
+        s3_bucket: "config.amarok.bridge.connext.network"
       git:
         repo: "CoinHippo-Labs/connext-bridge"
       whitelists: ""
