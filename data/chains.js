@@ -40,7 +40,7 @@ module.exports = {
         website: 'https://ethereum.org',
         coingecko_id: 'ethereum',
       },
-      {
+      /*{
         id: 'binance',
         chain_id: 56,
         name: 'BNB Chain',
@@ -77,10 +77,11 @@ module.exports = {
         color: '#e8b30b',
         website: 'https://bnbchain.world',
         coingecko_id: 'binancecoin',
-      },
+      },*/
       {
         id: 'polygon',
         chain_id: 137,
+        domain_id: '1886350457',
         name: 'Polygon',
         short_name: 'MATIC',
         provider_params: [
@@ -117,7 +118,7 @@ module.exports = {
         website: 'https://polygon.technology',
         coingecko_id: 'matic-network',
       },
-      {
+      /*{
         id: 'avalanche',
         chain_id: 43114,
         domain_id: '1635148152',
@@ -155,10 +156,11 @@ module.exports = {
         color: '#e84143',
         website: 'https://avax.network',
         coingecko_id: 'avalanche-2',
-      },
+      },*/
       {
         id: 'optimism',
         chain_id: 10,
+        domain_id: '1869640809',
         name: 'Optimism',
         short_name: 'OPT',
         provider_params: [
@@ -194,7 +196,7 @@ module.exports = {
         website: 'https://optimism.io',
         coingecko_id: 'optimism',
       },
-      {
+      /*{
         id: 'arbitrum',
         chain_id: 42161,
         name: 'Arbitrum One',
@@ -682,7 +684,7 @@ module.exports = {
         color: '#42decd',
         website: 'https://harmony.one',
         coingecko_id: 'harmony',
-      },
+      },*/
     ],
   },
   testnet: {
@@ -841,7 +843,7 @@ module.exports = {
         website: 'https://optimism.io',
         coingecko_id: 'ethereum',
       },
-      {
+      /*{
         id: 'arbitrum',
         chain_id: 421613,
         domain_id: '1734439522',
@@ -879,7 +881,7 @@ module.exports = {
         website: 'https://arbitrum.io',
         coingecko_id: 'arbitrum',
       },
-      /*{
+      {
         id: 'moonbeam',
         chain_id: 1287,
         domain_id: '5000',

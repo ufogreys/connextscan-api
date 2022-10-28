@@ -1,6 +1,6 @@
 module.exports = {
   mainnet: [
-    {
+    /*{
       id: 'usdt',
       symbol: 'USDT',
       name: 'Tether',
@@ -99,7 +99,7 @@ module.exports = {
           decimals: 6,
         },
       ],
-    },
+    },*/
     {
       id: 'usdc',
       symbol: 'USDC',
@@ -109,21 +109,26 @@ module.exports = {
       is_stablecoin: true,
       contracts: [
         {
-          contract_address: '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
+          contract_address: '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48',
           chain_id: 1,
           decimals: 6,
         },
-        {
+        /*{
           contract_address: '0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d',
           chain_id: 56,
           decimals: 18,
-        },
+        },*/
         {
-          contract_address: '0x2791bca1f2de4661ed88a30c99a7a9449aa84174',
+          contract_address: '0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174',
           chain_id: 137,
           decimals: 6,
         },
         {
+          contract_address: '0x7F5c764cBc14f9669B88837ca1490cCa17c31607',
+          chain_id: 10,
+          decimals: 6,
+        },
+        /*{
           contract_address: '0xff970a61a04b1ca14834a43f5de4533ebddb5cc8',
           chain_id: 42161,
           decimals: 6,
@@ -131,11 +136,6 @@ module.exports = {
         {
           contract_address: '0x750ba8b76187092B0D1E87E28daaf484d1b5273b',
           chain_id: 42170,
-          decimals: 6,
-        },
-        {
-          contract_address: '0x7f5c764cbc14f9669b88837ca1490cca17c31607',
-          chain_id: 10,
           decimals: 6,
         },
         {
@@ -196,10 +196,10 @@ module.exports = {
           contract_address: '0x51e44ffad5c2b122c8b635671fcc8139dc636e82',
           chain_id: 9001,
           decimals: 6,
-        },
+        },*/
       ],
     },
-    {
+    /*{
       id: 'dai',
       symbol: 'DAI',
       name: 'Dai',
@@ -299,7 +299,7 @@ module.exports = {
           decimals: 18,
         },
       ],
-    },
+    },*/
     {
       id: 'eth',
       symbol: 'ETH',
@@ -308,22 +308,29 @@ module.exports = {
       coingecko_id: 'ethereum',
       contracts: [
         {
-          contract_address: '0x0000000000000000000000000000000000000000',
+          contract_address: '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2',
           chain_id: 1,
           decimals: 18,
+          symbol: 'WETH',
         },
-        {
+        /*{
           contract_address: '0x2170ed0880ac9a755fd29b2688956bd959f933f8',
           chain_id: 56,
           decimals: 18,
-        },
+        },*/
         {
-          contract_address: '0x7ceb23fd6bc0add59e62ac25578270cff1b9f619',
+          contract_address: '0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619',
           chain_id: 137,
           decimals: 18,
           symbol: 'WETH',
         },
         {
+          contract_address: '0x4200000000000000000000000000000000000006',
+          chain_id: 10,
+          decimals: 18,
+          symbol: 'WETH',
+        },
+        /*{
           contract_address: '0x0000000000000000000000000000000000000000',
           chain_id: 42161,
           decimals: 18,
@@ -331,11 +338,6 @@ module.exports = {
         {
           contract_address: '0x0000000000000000000000000000000000000000',
           chain_id: 42170,
-          decimals: 18,
-        },
-        {
-          contract_address: '0x0000000000000000000000000000000000000000',
-          chain_id: 10,
           decimals: 18,
         },
         {
@@ -395,10 +397,10 @@ module.exports = {
           chain_id: 9001,
           decimals: 18,
           symbol: 'WETH',
-        },
+        },*/
       ],
     },
-    {
+    /*{
       id: 'wbtc',
       symbol: 'WBTC',
       name: 'Wrapped Bitcoin',
@@ -712,7 +714,7 @@ module.exports = {
           decimals: 18,
         },
       ],
-    },
+    },*/
   ],
   testnet: [
     {
