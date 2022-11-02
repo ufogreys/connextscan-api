@@ -122,11 +122,21 @@ module.exports = {
           contract_address: '0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174',
           chain_id: 137,
           decimals: 6,
+          next_asset: {
+            contract_address: '0x2ABe2d4F09ea3124DE56AD91ae0950A3B71eCD11',
+            decimals: 6,
+            symbol: 'nextUSDC',
+          },
         },
         {
           contract_address: '0x7F5c764cBc14f9669B88837ca1490cCa17c31607',
           chain_id: 10,
           decimals: 6,
+          next_asset: {
+            contract_address: '0x85FB8e2903Ad92A2ab0C6a725806636666ee2Ab4',
+            decimals: 6,
+            symbol: 'nextUSDC',
+          },
         },
         /*{
           contract_address: '0xff970a61a04b1ca14834a43f5de4533ebddb5cc8',
@@ -323,12 +333,22 @@ module.exports = {
           chain_id: 137,
           decimals: 18,
           symbol: 'WETH',
+          next_asset: {
+            contract_address: '0x2BD5B3cfB2b16F2B10e7BA41dc1cb93d61B36bB8',
+            decimals: 6,
+            symbol: 'nextWETH',
+          },
         },
         {
           contract_address: '0x4200000000000000000000000000000000000006',
           chain_id: 10,
           decimals: 18,
           symbol: 'WETH',
+          next_asset: {
+            contract_address: '0xfD5C16a50b717338Cbcb44e34e10d735709E9Cb9',
+            decimals: 6,
+            symbol: 'nextWETH',
+          },
         },
         /*{
           contract_address: '0x0000000000000000000000000000000000000000',
