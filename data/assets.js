@@ -741,6 +741,7 @@ module.exports = {
       id: 'test',
       symbol: 'TEST',
       name: 'Test',
+      image: '/logos/assets/test.png',
       is_stablecoin: true,
       contracts: [
         {
