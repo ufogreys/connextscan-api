@@ -816,6 +816,7 @@ module.exports = {
             chainId: '0x1a4',
             chainName: 'Optimism Goerli',
             rpcUrls: [
+              'https://opt-goerli.g.alchemy.com/v2/demo',
               'https://goerli.optimism.io',
             ],
             nativeCurrency: {
