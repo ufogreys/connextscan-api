@@ -701,6 +701,7 @@ module.exports = {
             chainName: 'Ethereum Goerli',
             rpcUrls: [
               'https://goerli.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161',
+              'https://rpc.ankr.com/eth_goerli',
             ],
             nativeCurrency: {
               name: 'Ethereum',
@@ -778,6 +779,7 @@ module.exports = {
             chainName: 'Polygon Mumbai',
             rpcUrls: [
               'https://polygon-mumbai.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161',
+              'https://rpc.ankr.com/polygon_mumbai',
               'https://matic-mumbai.chainstacklabs.com',
             ],
             nativeCurrency: {
@@ -816,6 +818,7 @@ module.exports = {
             chainId: '0x1a4',
             chainName: 'Optimism Goerli',
             rpcUrls: [
+              'https://rpc.ankr.com/optimism_testnet',
               'https://opt-goerli.g.alchemy.com/v2/demo',
               'https://goerli.optimism.io',
             ],
