@@ -24,6 +24,11 @@ module.exports = {
           decimals: 6,
         },
         {
+          contract_address: '0x94b008aa00579c1307b0ef2c499ad98a8ce58e58',
+          chain_id: 10,
+          decimals: 6,
+        },
+        {
           contract_address: '0xfd086bc7cd5c481dcc9c85ebe478a1c0b69fcbb9',
           chain_id: 42161,
           decimals: 6,
@@ -31,11 +36,6 @@ module.exports = {
         {
           contract_address: '0x52484E1ab2e2B22420a25c20FA49E173a26202Cd',
           chain_id: 42170,
-          decimals: 6,
-        },
-        {
-          contract_address: '0x94b008aa00579c1307b0ef2c499ad98a8ce58e58',
-          chain_id: 10,
           decimals: 6,
         },
         {
@@ -234,17 +234,17 @@ module.exports = {
         },
         {
           contract_address: '0xda10009cbd5d07dd0cecc66161fc93d7c9000da1',
+          chain_id: 10,
+          decimals: 18,
+        },
+        {
+          contract_address: '0xda10009cbd5d07dd0cecc66161fc93d7c9000da1',
           chain_id: 42161,
           decimals: 18,
         },
         {
           contract_address: '0xda10009cbd5d07dd0cecc66161fc93d7c9000da1',
           chain_id: 42170,
-          decimals: 18,
-        },
-        {
-          contract_address: '0xda10009cbd5d07dd0cecc66161fc93d7c9000da1',
-          chain_id: 10,
           decimals: 18,
         },
         {
@@ -450,13 +450,13 @@ module.exports = {
           decimals: 8,
         },
         {
-          contract_address: '0x2f2a2543b76a4166549f7aab2e75bef0aefc5b0f',
-          chain_id: 42161,
+          contract_address: '0x68f180fcce6836688e9084f035309e29bf0a2095',
+          chain_id: 10,
           decimals: 8,
         },
         {
-          contract_address: '0x68f180fcce6836688e9084f035309e29bf0a2095',
-          chain_id: 10,
+          contract_address: '0x2f2a2543b76a4166549f7aab2e75bef0aefc5b0f',
+          chain_id: 42161,
           decimals: 8,
         },
         {
@@ -515,230 +515,6 @@ module.exports = {
           decimals: 8,
         },
       ],
-    },
-    {
-      id: 'grt',
-      symbol: 'GRT',
-      name: 'The Graph',
-      image: '/logos/assets/grt.png',
-      coingecko_id: 'the-graph',
-      contracts: [
-        {
-          contract_address: '0xc944e90c64b2c07662a292be6244bdf05cda44a7',
-          chain_id: 1,
-          decimals: 18,
-        },
-        {
-          contract_address: '0x5fe2b58c013d7601147dcdd68c143a77499f5531',
-          chain_id: 137,
-          decimals: 18,
-        },
-        {
-          contract_address: '0x23a941036ae778ac51ab04cea08ed6e2fe103614',
-          chain_id: 42161,
-          decimals: 18,
-        },
-        {
-          contract_address: '0x8a0cac13c7da965a312f08ea4229c37869e85cb9',
-          chain_id: 43114,
-          decimals: 18,
-          symbol: 'GRT.e',
-        },
-        {
-          contract_address: '0xfadc59d012ba3c110b08a15b7755a5cb7cbe77d7',
-          chain_id: 100,
-          decimals: 18,
-        },
-        {
-          contract_address: '0x025a4c577198d116ea499193e6d735fdb2e6e841',
-          chain_id: 122,
-          decimals: 18,
-        },
-      ],
-    },
-    {
-      id: 'gno',
-      symbol: 'GNO',
-      name: 'Gnosis',
-      image: '/logos/assets/gno.png',
-      coingecko_id: 'gnosis',
-      contracts: [
-        {
-          contract_address: '0x6810e776880c02933d47db1b9fc05908e5386b96',
-          chain_id: 1,
-          decimals: 18,
-        },
-        {
-          contract_address: '0x5ffd62d3c3ee2e81c00a7b9079fb248e7df024a8',
-          chain_id: 137,
-          decimals: 18,
-        },
-        {
-          contract_address: '0xa0b862f60edef4452f25b4160f177db44deb6cf1',
-          chain_id: 42161,
-          decimals: 18,
-        },
-        {
-          contract_address: '0x9c58bacc331c9aa871afd802db6379a98e80cedb',
-          chain_id: 100,
-          decimals: 18,
-        },
-      ],
-    },
-    {
-      id: 'fei',
-      symbol: 'FEI',
-      name: 'Fei USD',
-      image: '/logos/assets/fei.png',
-      coingecko_id: 'fei-usd',
-      is_stablecoin: true,
-      contracts: [
-        {
-          contract_address: '0x956f47f50a910163d8bf957cf5846d573e7f87ca',
-          chain_id: 1,
-          decimals: 18,
-        },
-        {
-          contract_address: '0xc7031408c7978da9aca03308cd104cb54e7a2eb3',
-          chain_id: 137,
-          decimals: 18,
-        },
-        {
-          contract_address: '0x4a717522566c7a09fd2774ccedc5a8c43c5f9fd2',
-          chain_id: 42161,
-          decimals: 18,
-        },
-        {
-          contract_address: '0x35d48a789904e9b15705977192e5d95e2af7f1d3',
-          chain_id: 10,
-          decimals: 18,
-        },
-        {
-          contract_address: '0xc382dc8501e526975579147ba6017376dedb78be',
-          chain_id: 43114,
-          decimals: 18,
-        },
-      ],
-    },
-    {
-      id: 'gth',
-      symbol: 'GTH',
-      name: 'Gather',
-      image: '/logos/assets/gth.png',
-      coingecko_id: 'gather',
-      contracts: [
-        {
-          contract_address: '0xeb986da994e4a118d5956b02d8b7c3c7ce373674',
-          chain_id: 1,
-          decimals: 18,
-        },
-        {
-          contract_address: '0xeb986da994e4a118d5956b02d8b7c3c7ce373674',
-          chain_id: 56,
-          decimals: 18,
-        },
-        {
-          contract_address: '0x0000000000000000000000000000000000000000',
-          chain_id: 192837465,
-          decimals: 18,
-        },
-      ],
-    },
-    {
-      id: 'boba',
-      symbol: 'BOBA',
-      name: 'Boba',
-      image: '/logos/assets/boba.png',
-      coingecko_id: 'boba-network',
-      contracts: [
-        {
-          contract_address: '0x42bbfa2e77757c645eeaad1655e0911a7553efbc',
-          chain_id: 1,
-          decimals: 18,
-        },
-        {
-          contract_address: '0xa18bf3994c0cc6e3b63ac420308e5383f53120d7',
-          chain_id: 288,
-          decimals: 18,
-        },
-      ],
-    },
-    {
-      id: 'magic',
-      symbol: 'MAGIC',
-      name: 'MAGIC',
-      image: '/logos/assets/magic.png',
-      coingecko_id: 'magic',
-      contracts: [
-        {
-          contract_address: '0xb0c7a3ba49c7a6eaba6cd4a96c55a1391070ac9a',
-          chain_id: 1,
-          decimals: 18,
-        },
-        {
-          contract_address: '0x539bde0d7dbd336b79148aa742883198bbf60342',
-          chain_id: 42161,
-          decimals: 18,
-        },
-      ],
-    },
-    {
-      id: 'miva',
-      symbol: 'MIVA',
-      name: 'Minerva Wallet',
-      image: '/logos/assets/miva.png',
-      coingecko_id: 'minerva-wallet',
-      contracts: [
-        {
-          contract_address: '0xc0b2983a17573660053beeed6fdb1053107cf387',
-          chain_id: 137,
-          decimals: 18,
-        },
-        {
-          contract_address: '0x63e62989d9eb2d37dfdb1f93a22f063635b07d51',
-          chain_id: 100,
-          decimals: 18,
-        },
-      ],
-    },
-    {
-      id: 'fraction',
-      symbol: 'FRACTION',
-      name: 'Fraction',
-      image: '/logos/assets/fraction.png',
-      coingecko_id: 'fraction',
-      contracts: [
-        {
-          contract_address: '0xbd80cfa9d93a87d1bb895f810ea348e496611cd4',
-          chain_id: 56,
-          decimals: 18,
-        },
-        {
-          contract_address: '0xbd80cfa9d93a87d1bb895f810ea348e496611cd4',
-          chain_id: 137,
-          decimals: 18,
-        },
-        {
-          contract_address: '0x2bf2ba13735160624a0feae98f6ac8f70885ea61',
-          chain_id: 42161,
-          decimals: 18,
-        },
-        {
-          contract_address: '0xbd80cfa9d93a87d1bb895f810ea348e496611cd4',
-          chain_id: 10,
-          decimals: 18,
-        },
-        {
-          contract_address: '0xbd80cfa9d93a87d1bb895f810ea348e496611cd4',
-          chain_id: 43114,
-          decimals: 18,
-        },
-        {
-          contract_address: '0x2bf2ba13735160624a0feae98f6ac8f70885ea61',
-          chain_id: 100,
-          decimals: 18,
-        },
-      ],
     },*/
   ],
   testnet: [
@@ -790,20 +566,30 @@ module.exports = {
           image: '/logos/assets/weth.png',
         },
         {
-          contract_address: '0x1E5341E4b7ed5D0680d9066aac0396F0b1bD1E69',
+          contract_address: '0xFD2AB41e083c75085807c4A65C0A14FDD93d55A9',
           chain_id: 80001,
           decimals: 18,
-          symbol: 'nextWETH',
-          image: '/logos/assets/nextweth.png',
-          is_pool: true,
+          symbol: 'WETH',
+          image: '/logos/assets/weth.png',
+          next_asset: {
+            contract_address: '0x1E5341E4b7ed5D0680d9066aac0396F0b1bD1E69',
+            decimals: 18,
+            symbol: 'nextWETH',
+            image: '/logos/assets/nextweth.png',
+          },
         },
         {
-          contract_address: '0x39B061B7e41DE8B721f9aEcEB6b3f17ECB7ba63E',
+          contract_address: '0x74c6FD7D2Bc6a8F0Ebd7D78321A95471b8C2B806',
           chain_id: 420,
           decimals: 18,
-          symbol: 'nextWETH',
-          image: '/logos/assets/nextweth.png',
-          is_pool: true,
+          symbol: 'WETH',
+          image: '/logos/assets/weth.png',
+          next_asset: {
+            contract_address: '0x39B061B7e41DE8B721f9aEcEB6b3f17ECB7ba63E',
+            decimals: 18,
+            symbol: 'nextWETH',
+            image: '/logos/assets/nextweth.png',
+          },
         },
         {
           contract_address: '0x1346786E6A5e07b90184a1Ba58E55444b99DC4A2',
