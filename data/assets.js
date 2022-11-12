@@ -337,7 +337,7 @@ module.exports = {
           image: '/logos/assets/weth.png',
           next_asset: {
             contract_address: '0x2BD5B3cfB2b16F2B10e7BA41dc1cb93d61B36bB8',
-            decimals: 6,
+            decimals: 18,
             symbol: 'nextWETH',
             image: '/logos/assets/nextweth.png',
           },
@@ -350,7 +350,7 @@ module.exports = {
           image: '/logos/assets/weth.png',
           next_asset: {
             contract_address: '0xfD5C16a50b717338Cbcb44e34e10d735709E9Cb9',
-            decimals: 6,
+            decimals: 18,
             symbol: 'nextWETH',
             image: '/logos/assets/nextweth.png',
           },
