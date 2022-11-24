@@ -123,7 +123,7 @@ module.exports = {
           chain_id: 137,
           decimals: 6,
           next_asset: {
-            contract_address: '0x2ABe2d4F09ea3124DE56AD91ae0950A3B71eCD11',
+            contract_address: '0x11DAd8C97a7688d9deD484a7270efDc4a7Fe04C5',
             decimals: 6,
             symbol: 'nextUSDC',
           },
@@ -133,7 +133,7 @@ module.exports = {
           chain_id: 10,
           decimals: 6,
           next_asset: {
-            contract_address: '0x85FB8e2903Ad92A2ab0C6a725806636666ee2Ab4',
+            contract_address: '0xc7d36fE97cC7A8D10FdD3F678b660118fb13D548',
             decimals: 6,
             symbol: 'nextUSDC',
           },
@@ -336,7 +336,7 @@ module.exports = {
           symbol: 'WETH',
           image: '/logos/assets/weth.png',
           next_asset: {
-            contract_address: '0x2BD5B3cfB2b16F2B10e7BA41dc1cb93d61B36bB8',
+            contract_address: '0xe918780FdC803388B8281caEe8E096CB2c227E4A',
             decimals: 18,
             symbol: 'nextWETH',
             image: '/logos/assets/nextweth.png',
@@ -349,7 +349,7 @@ module.exports = {
           symbol: 'WETH',
           image: '/logos/assets/weth.png',
           next_asset: {
-            contract_address: '0xfD5C16a50b717338Cbcb44e34e10d735709E9Cb9',
+            contract_address: '0x20bf24AfE0A935f15059d65cF24ff6bA360E6c97',
             decimals: 18,
             symbol: 'nextWETH',
             image: '/logos/assets/nextweth.png',
