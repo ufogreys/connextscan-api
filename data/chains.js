@@ -819,7 +819,6 @@ module.exports = {
             chainName: 'Optimism Goerli',
             rpcUrls: [
               'https://rpc.ankr.com/optimism_testnet',
-              'https://opt-goerli.g.alchemy.com/v2/demo',
               'https://goerli.optimism.io',
             ],
             nativeCurrency: {
