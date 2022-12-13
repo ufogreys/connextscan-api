@@ -29,6 +29,11 @@ module.exports = {
           decimals: 6,
         },
         {
+          contract_address: '0x4ecaba5870353805a9f068101a40e0f32ed605c6',
+          chain_id: 100,
+          decimals: 6,
+        },
+        {
           contract_address: '0xfd086bc7cd5c481dcc9c85ebe478a1c0b69fcbb9',
           chain_id: 42161,
           decimals: 6,
@@ -49,11 +54,6 @@ module.exports = {
           chain_id: 250,
           decimals: 6,
           symbol: 'fUSDT',
-        },
-        {
-          contract_address: '0x4ecaba5870353805a9f068101a40e0f32ed605c6',
-          chain_id: 100,
-          decimals: 6,
         },
         {
           contract_address: '0x8e70cd5b4ff3f62659049e74b6649c6603a0e594',
@@ -138,6 +138,16 @@ module.exports = {
             symbol: 'nextUSDC',
           },
         },
+        {
+          contract_address: '0xDDAfbb505ad214D7b80b1f830fcCc89B60fb7A83',
+          chain_id: 100,
+          decimals: 6,
+          next_asset: {
+            contract_address: '0x7e0F3216A74888E8eE3C839C27db1b4a3D8C1CC3',
+            decimals: 6,
+            symbol: 'nextUSDC',
+          },
+        },
         /*{
           contract_address: '0xff970a61a04b1ca14834a43f5de4533ebddb5cc8',
           chain_id: 42161,
@@ -157,11 +167,6 @@ module.exports = {
         {
           contract_address: '0x04068da6c83afcfa0e13ba15a6696662335d5b75',
           chain_id: 250,
-          decimals: 6,
-        },
-        {
-          contract_address: '0xddafbb505ad214d7b80b1f830fccc89b60fb7a83',
-          chain_id: 100,
           decimals: 6,
         },
         {
@@ -238,6 +243,13 @@ module.exports = {
           decimals: 18,
         },
         {
+          contract_address: '0x0000000000000000000000000000000000000000',
+          chain_id: 100,
+          decimals: 18,
+          symbol: 'xDAI',
+          image: '/logos/assets/xdai.png',
+        },
+        {
           contract_address: '0xda10009cbd5d07dd0cecc66161fc93d7c9000da1',
           chain_id: 42161,
           decimals: 18,
@@ -257,13 +269,6 @@ module.exports = {
           contract_address: '0x8d11ec38a3eb5e956b052f67da8bdc9bef8abf3e',
           chain_id: 250,
           decimals: 18,
-        },
-        {
-          contract_address: '0x0000000000000000000000000000000000000000',
-          chain_id: 100,
-          decimals: 18,
-          symbol: 'xDAI',
-          image: '/logos/assets/xdai.png',
         },
         {
           contract_address: '0xc234a67a4f840e61ade794be47de455361b52413',
@@ -355,6 +360,19 @@ module.exports = {
             image: '/logos/assets/nextweth.png',
           },
         },
+        {
+          contract_address: '0x6A023CCd1ff6F2045C3309768eAd9E68F978f6e1',
+          chain_id: 100,
+          decimals: 18,
+          symbol: 'WETH',
+          image: '/logos/assets/weth.png',
+          next_asset: {
+            contract_address: '0x475e647B3E31585466506bd36c6a59822DC32A08',
+            decimals: 18,
+            symbol: 'nextWETH',
+            image: '/logos/assets/nextweth.png',
+          },
+        },
         /*{
           contract_address: '0x0000000000000000000000000000000000000000',
           chain_id: 42161,
@@ -375,12 +393,6 @@ module.exports = {
           contract_address: '0x74b23882a30290451a17c44f4f05243b6b58c76d',
           chain_id: 250,
           decimals: 18,
-        },
-        {
-          contract_address: '0x6a023ccd1ff6f2045c3309768ead9e68f978f6e1',
-          chain_id: 100,
-          decimals: 18,
-          symbol: 'WETH',
         },
         {
           contract_address: '0x30d2a9f5fdf90ace8c17952cbb4ee48a55d916a7',
@@ -455,6 +467,11 @@ module.exports = {
           decimals: 8,
         },
         {
+          contract_address: '0x8e5bbbb09ed1ebde8674cda39a0c169401db4252',
+          chain_id: 100,
+          decimals: 8,
+        },
+        {
           contract_address: '0x2f2a2543b76a4166549f7aab2e75bef0aefc5b0f',
           chain_id: 42161,
           decimals: 8,
@@ -470,11 +487,6 @@ module.exports = {
           chain_id: 250,
           decimals: 8,
           symbol: 'BTC',
-        },
-        {
-          contract_address: '0x8e5bbbb09ed1ebde8674cda39a0c169401db4252',
-          chain_id: 100,
-          decimals: 8,
         },
         {
           contract_address: '0x1dc78acda13a8bc4408b207c9e48cdbc096d95e0',

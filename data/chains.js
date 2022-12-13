@@ -308,11 +308,11 @@ module.exports = {
         color: '#1869ff',
         website: 'https://fantom.foundation',
         coingecko_id: 'fantom',
-      },
+      },*/
       {
         id: 'gnosis',
         chain_id: 100,
-        domain_id: '2019844457',
+        domain_id: '6648936',
         name: 'Gnosis',
         short_name: 'GNO',
         provider_params: [
@@ -347,7 +347,7 @@ module.exports = {
         website: 'https://gnosischain.com',
         coingecko_id: 'gnosis',
       },
-      {
+      /*{
         id: 'moonbeam',
         chain_id: 1284,
         domain_id: '1650811245',
