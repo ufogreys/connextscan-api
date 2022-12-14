@@ -113,11 +113,16 @@ module.exports = {
           chain_id: 1,
           decimals: 6,
         },
-        /*{
-          contract_address: '0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d',
+        {
+          contract_address: '0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d',
           chain_id: 56,
-          decimals: 18,
-        },*/
+          decimals: 6,
+          next_asset: {
+            contract_address: '0x58B04866a734677bC66fC2Bf405860D658Ae4a05',
+            decimals: 6,
+            symbol: 'nextUSDC',
+          },
+        },
         {
           contract_address: '0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174',
           chain_id: 137,
@@ -329,11 +334,19 @@ module.exports = {
           symbol: 'WETH',
           image: '/logos/assets/weth.png',
         },
-        /*{
-          contract_address: '0x2170ed0880ac9a755fd29b2688956bd959f933f8',
+        {
+          contract_address: '0x2170Ed0880ac9A755fd29B2688956BD959F933F8',
           chain_id: 56,
           decimals: 18,
-        },*/
+          symbol: 'WETH',
+          image: '/logos/assets/weth.png',
+          next_asset: {
+            contract_address: '0xcEc11a1963BBA00e18255Ba590623cD99Ed38D42',
+            decimals: 18,
+            symbol: 'nextWETH',
+            image: '/logos/assets/nextweth.png',
+          },
+        },
         {
           contract_address: '0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619',
           chain_id: 137,

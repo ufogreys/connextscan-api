@@ -40,9 +40,10 @@ module.exports = {
         website: 'https://ethereum.org',
         coingecko_id: 'ethereum',
       },
-      /*{
+      {
         id: 'binance',
         chain_id: 56,
+        domain_id: '6450786',
         name: 'BNB Chain',
         short_name: 'BNB',
         provider_params: [
@@ -77,7 +78,7 @@ module.exports = {
         color: '#e8b30b',
         website: 'https://bnbchain.world',
         coingecko_id: 'binancecoin',
-      },*/
+      },
       {
         id: 'polygon',
         chain_id: 137,
@@ -233,8 +234,46 @@ module.exports = {
         color: '#28a0f0',
         website: 'https://arbitrum.io',
         coingecko_id: 'arbitrum',
-      },
+      },*/     
       {
+        id: 'gnosis',
+        chain_id: 100,
+        domain_id: '6778479',
+        name: 'Gnosis',
+        short_name: 'GNO',
+        provider_params: [
+          {
+            chainId: '0x64',
+            chainName: 'Gnosis',
+            rpcUrls: [
+              'https://rpc.ankr.com/gnosis',
+            ],
+            nativeCurrency: {
+              name: 'xDAI',
+              symbol: 'xDAI',
+              decimals: 18,
+            },
+            blockExplorerUrls: [
+              'https://gnosisscan.io',
+            ],
+          },
+        ],
+        explorer: {
+          name: 'Gnosisscan',
+          url: 'https://gnosisscan.io',
+          icon: '/logos/explorers/gnosisscan.png',
+          block_path: '/block/{block}',
+          address_path: '/address/{address}',
+          contract_path: '/token/{address}',
+          contract_0_path: '/address/{address}',
+          transaction_path: '/tx/{tx}',
+        },
+        image: '/logos/chains/gnosis.png',
+        color: '#48a9a6',
+        website: 'https://gnosischain.com',
+        coingecko_id: 'gnosis',
+      },
+      /*{
         id: 'arbitrum_nova',
         chain_id: 42170,
         name: 'Arbitrum Nova',
@@ -309,44 +348,6 @@ module.exports = {
         website: 'https://fantom.foundation',
         coingecko_id: 'fantom',
       },*/
-      {
-        id: 'gnosis',
-        chain_id: 100,
-        domain_id: '6648936',
-        name: 'Gnosis',
-        short_name: 'GNO',
-        provider_params: [
-          {
-            chainId: '0x64',
-            chainName: 'Gnosis',
-            rpcUrls: [
-              'https://rpc.ankr.com/gnosis',
-            ],
-            nativeCurrency: {
-              name: 'xDAI',
-              symbol: 'xDAI',
-              decimals: 18,
-            },
-            blockExplorerUrls: [
-              'https://gnosisscan.io',
-            ],
-          },
-        ],
-        explorer: {
-          name: 'Gnosisscan',
-          url: 'https://gnosisscan.io',
-          icon: '/logos/explorers/gnosisscan.png',
-          block_path: '/block/{block}',
-          address_path: '/address/{address}',
-          contract_path: '/token/{address}',
-          contract_0_path: '/address/{address}',
-          transaction_path: '/tx/{tx}',
-        },
-        image: '/logos/chains/gnosis.png',
-        color: '#48a9a6',
-        website: 'https://gnosischain.com',
-        coingecko_id: 'gnosis',
-      },
       /*{
         id: 'moonbeam',
         chain_id: 1284,
