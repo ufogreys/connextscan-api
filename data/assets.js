@@ -112,11 +112,13 @@ module.exports = {
           contract_address: '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48',
           chain_id: 1,
           decimals: 6,
+          symbol: 'USDC',
         },
         {
           contract_address: '0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d',
           chain_id: 56,
           decimals: 6,
+          symbol: 'USDC',
           next_asset: {
             contract_address: '0x58B04866a734677bC66fC2Bf405860D658Ae4a05',
             decimals: 6,
@@ -127,6 +129,7 @@ module.exports = {
           contract_address: '0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174',
           chain_id: 137,
           decimals: 6,
+          symbol: 'USDC',
           next_asset: {
             contract_address: '0x6653e37db7eEEe514ACD0998f66e66c75F216699',
             decimals: 6,
@@ -137,6 +140,7 @@ module.exports = {
           contract_address: '0x7F5c764cBc14f9669B88837ca1490cCa17c31607',
           chain_id: 10,
           decimals: 6,
+          symbol: 'USDC',
           next_asset: {
             contract_address: '0xFF748Daa6C2eAa1d3Ac78D2Ce8Ab84c25a53e68A',
             decimals: 6,
@@ -147,6 +151,7 @@ module.exports = {
           contract_address: '0xDDAfbb505ad214D7b80b1f830fcCc89B60fb7A83',
           chain_id: 100,
           decimals: 6,
+          symbol: 'USDC',
           next_asset: {
             contract_address: '0x7e0F3216A74888E8eE3C839C27db1b4a3D8C1CC3',
             decimals: 6,
@@ -541,6 +546,45 @@ module.exports = {
         },
       ],
     },*/
+    {
+      id: 'kp3r',
+      symbol: 'KP3R',
+      name: 'Keep3rV1',
+      image: '/logos/assets/kp3r.png',
+      coingecko_id: 'keep3rv1',
+      contracts: [
+        {
+          contract_address: '0x1cEB5cB57C4D4E2b2433641b95Dd330A33185A44',
+          chain_id: 1,
+          decimals: 18,
+          symbol: 'KP3R',
+        },
+        {
+          contract_address: '0xB3de3929C3bE8a1Fa446f27d1b549Dd9d5C313E0',
+          chain_id: 56,
+          decimals: 18,
+          symbol: 'KP3R',
+        },
+        {
+          contract_address: '0x725dB429F0ff5A3DF5f41fcA8676CF9Dd1C6b3F0',
+          chain_id: 137,
+          decimals: 18,
+          symbol: 'KP3R',
+        },
+        {
+          contract_address: '0xa83ad51c99bb40995f9292c9a436046ab7578caf',
+          chain_id: 10,
+          decimals: 18,
+          symbol: 'KP3R',
+        },
+        {
+          contract_address: '0xA83ad51C99BB40995F9292C9a436046ab7578cAF',
+          chain_id: 100,
+          decimals: 18,
+          symbol: 'KP3R',
+        },
+      ],
+    },
   ],
   testnet: [
     {
@@ -622,6 +666,27 @@ module.exports = {
           decimals: 18,
           symbol: 'WETH',
           image: '/logos/assets/weth.png',
+        },
+      ],
+    },
+    {
+      id: 'tkn',
+      symbol: 'TKN',
+      name: 'TKN',
+      image: '/logos/assets/tkn.png',
+      is_stablecoin: true,
+      contracts: [
+        {
+          contract_address: '0x16F63C5036d3F48A239358656a8f123eCE85789C',
+          chain_id: 5,
+          decimals: 18,
+          symbol: 'TKN',
+        },
+        {
+          contract_address: '0x3Db593146464816F10d4eBA4743C76A5A4D08425',
+          chain_id: 420,
+          decimals: 18,
+          symbol: 'TKN',
         },
       ],
     },
