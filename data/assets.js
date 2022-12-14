@@ -330,7 +330,7 @@ module.exports = {
       symbol: 'ETH',
       name: 'Ethereum',
       image: '/logos/assets/eth.png',
-      coingecko_id: 'ethereum',
+      coingecko_id: 'weth',
       contracts: [
         {
           contract_address: '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2',
@@ -588,7 +588,7 @@ module.exports = {
     {
       id: 'kp3r-lp',
       symbol: 'KLP',
-      name: 'Keep3rV1 LP',
+      name: 'Keep3rLP',
       image: '/logos/assets/kp3r.png',
       coingecko_id: 'keep3rv1',
       contracts: [
@@ -664,7 +664,7 @@ module.exports = {
       symbol: 'ETH',
       name: 'Ethereum',
       image: '/logos/assets/eth.png',
-      coingecko_id: 'ethereum',
+      coingecko_id: 'weth',
       contracts: [
         {
           contract_address: '0xB4FBF271143F4FBf7B91A5ded31805e42b2208d6',
