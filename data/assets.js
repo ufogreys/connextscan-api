@@ -590,7 +590,7 @@ module.exports = {
       symbol: 'KLP',
       name: 'Keep3rLP',
       image: '/logos/assets/kp3r.png',
-      coingecko_id: 'keep3rv1',
+      coingecko_id: 'ethereum',
       contracts: [
         {
           contract_address: '0x3f6740b5898c5D3650ec6eAce9a649Ac791e44D7',
