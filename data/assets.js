@@ -117,7 +117,7 @@ module.exports = {
         {
           contract_address: '0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d',
           chain_id: 56,
-          decimals: 6,
+          decimals: 18,
           symbol: 'USDC',
           next_asset: {
             contract_address: '0x58B04866a734677bC66fC2Bf405860D658Ae4a05',
