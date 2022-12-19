@@ -52,7 +52,7 @@ module.exports = {
             chainName: 'BNB Chain',
             rpcUrls: [
               'https://rpc.ankr.com/bsc',
-              'https://bscrpc.com',
+              'https://bsc-mainnet.public.blastapi.io',
             ],
             nativeCurrency: {
               name: 'BNB',
@@ -92,7 +92,7 @@ module.exports = {
             rpcUrls: [
               'https://rpc.ankr.com/polygon',
               'https://matic-mainnet.chainstacklabs.com',
-              'https://polygon-rpc.com',
+              'https://rpc-mainnet.matic.quiknode.pro',
             ],
             nativeCurrency: {
               name: 'Polygon',
@@ -169,8 +169,8 @@ module.exports = {
             chainId: '0xa',
             chainName: 'Optimism',
             rpcUrls: [
-              'https://rpc.ankr.com/optimism',
               'https://mainnet.optimism.io',
+              'https://rpc.ankr.com/optimism',
             ],
             nativeCurrency: {
               name: 'Ethereum',
@@ -780,8 +780,8 @@ module.exports = {
             chainName: 'Polygon Mumbai',
             rpcUrls: [
               'https://polygon-mumbai.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161',
-              'https://rpc.ankr.com/polygon_mumbai',
               'https://matic-mumbai.chainstacklabs.com',
+              'https://rpc.ankr.com/polygon_mumbai',
             ],
             nativeCurrency: {
               name: 'Polygon',
@@ -819,8 +819,8 @@ module.exports = {
             chainId: '0x1a4',
             chainName: 'Optimism Goerli',
             rpcUrls: [
-              'https://rpc.ankr.com/optimism_testnet',
               'https://goerli.optimism.io',
+              'https://rpc.ankr.com/optimism_testnet',
             ],
             nativeCurrency: {
               name: 'Ethereum',
