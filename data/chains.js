@@ -12,8 +12,8 @@ module.exports = {
             chainId: '0x1',
             chainName: 'Ethereum',
             rpcUrls: [
-              'https://rpc.ankr.com/eth',
               'https://mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161',
+              'https://rpc.ankr.com/eth',
             ],
             nativeCurrency: {
               name: 'Ethereum',
@@ -169,8 +169,8 @@ module.exports = {
             chainId: '0xa',
             chainName: 'Optimism',
             rpcUrls: [
-              'https://1rpc.io/op',
               'https://rpc.ankr.com/optimism',
+              'https://1rpc.io/op',
               'https://mainnet.optimism.io',
             ],
             nativeCurrency: {
@@ -820,8 +820,8 @@ module.exports = {
             chainId: '0x1a4',
             chainName: 'Optimism Goerli',
             rpcUrls: [
-              'https://goerli.optimism.io',
               'https://rpc.ankr.com/optimism_testnet',
+              'https://goerli.optimism.io',
             ],
             nativeCurrency: {
               name: 'Ethereum',
