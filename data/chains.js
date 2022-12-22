@@ -198,7 +198,7 @@ module.exports = {
         website: 'https://optimism.io',
         coingecko_id: 'optimism',
       },
-      /*{
+      {
         id: 'arbitrum',
         chain_id: 42161,
         domain_id: '1634886255',
@@ -236,7 +236,7 @@ module.exports = {
         color: '#28a0f0',
         website: 'https://arbitrum.io',
         coingecko_id: 'arbitrum',
-      },*/
+      },
       {
         id: 'gnosis',
         chain_id: 100,

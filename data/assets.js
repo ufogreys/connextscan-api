@@ -622,7 +622,7 @@ module.exports = {
             image: '/logos/assets/nextkp3r.png',
           },
         },
-        {
+        /*{
           contract_address: '',
           chain_id: 42161,
           decimals: 18,
@@ -634,7 +634,7 @@ module.exports = {
             symbol: 'nextKP3R',
             image: '/logos/assets/nextkp3r.png',
           },
-        },
+        },*/
         {
           contract_address: '0xA83ad51C99BB40995F9292C9a436046ab7578cAF',
           chain_id: 100,
@@ -702,7 +702,7 @@ module.exports = {
             image: '/logos/assets/nextkp3r.png',
           },
         },
-        {
+        /*{
           contract_address: '',
           chain_id: 42161,
           decimals: 18,
@@ -714,7 +714,7 @@ module.exports = {
             symbol: 'nextKLP',
             image: '/logos/assets/nextkp3r.png',
           },
-        },
+        },*/
         {
           contract_address: '0x87A93A942D10B6cC061A952C3A1213d52044bE97',
           chain_id: 100,
