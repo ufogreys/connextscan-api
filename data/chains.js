@@ -201,6 +201,7 @@ module.exports = {
       /*{
         id: 'arbitrum',
         chain_id: 42161,
+        domain_id: '1634886255',
         name: 'Arbitrum One',
         short_name: 'ARB',
         provider_params: [
@@ -235,7 +236,7 @@ module.exports = {
         color: '#28a0f0',
         website: 'https://arbitrum.io',
         coingecko_id: 'arbitrum',
-      },*/     
+      },*/
       {
         id: 'gnosis',
         chain_id: 100,
