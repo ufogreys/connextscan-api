@@ -124,6 +124,7 @@ module.exports = {
             decimals: 6,
             symbol: 'nextUSDC',
           },
+          is_pool: true,
         },
         {
           contract_address: '0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174',
@@ -135,6 +136,7 @@ module.exports = {
             decimals: 6,
             symbol: 'nextUSDC',
           },
+          is_pool: true,
         },
         {
           contract_address: '0x7F5c764cBc14f9669B88837ca1490cCa17c31607',
@@ -146,6 +148,7 @@ module.exports = {
             decimals: 6,
             symbol: 'nextUSDC',
           },
+          is_pool: true,
         },
         {
           contract_address: '0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8',
@@ -157,6 +160,7 @@ module.exports = {
             decimals: 6,
             symbol: 'nextUSDC',
           },
+          is_pool: true,
         },
         {
           contract_address: '0xDDAfbb505ad214D7b80b1f830fcCc89B60fb7A83',
@@ -168,6 +172,7 @@ module.exports = {
             decimals: 6,
             symbol: 'nextUSDC',
           },
+          is_pool: true,
         },
         /*{
           contract_address: '0xff970a61a04b1ca14834a43f5de4533ebddb5cc8',
@@ -362,6 +367,7 @@ module.exports = {
             symbol: 'nextWETH',
             image: '/logos/assets/nextweth.png',
           },
+          is_pool: true,
         },
         {
           contract_address: '0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619',
@@ -375,6 +381,7 @@ module.exports = {
             symbol: 'nextWETH',
             image: '/logos/assets/nextweth.png',
           },
+          is_pool: true,
         },
         {
           contract_address: '0x4200000000000000000000000000000000000006',
@@ -388,6 +395,7 @@ module.exports = {
             symbol: 'nextWETH',
             image: '/logos/assets/nextweth.png',
           },
+          is_pool: true,
         },
         {
           contract_address: '0x82aF49447D8a07e3bd95BD0d56f35241523fBab1',
@@ -401,6 +409,7 @@ module.exports = {
             symbol: 'nextWETH',
             image: '/logos/assets/nextweth.png',
           },
+          is_pool: true,
         },
         {
           contract_address: '0x6A023CCd1ff6F2045C3309768eAd9E68F978f6e1',
@@ -414,6 +423,7 @@ module.exports = {
             symbol: 'nextWETH',
             image: '/logos/assets/nextweth.png',
           },
+          is_pool: true,
         },
         /*{
           contract_address: '0x0000000000000000000000000000000000000000',
@@ -791,6 +801,7 @@ module.exports = {
             symbol: 'nextWETH',
             image: '/logos/assets/nextweth.png',
           },
+          is_pool: true,
         },
         {
           contract_address: '0x74c6FD7D2Bc6a8F0Ebd7D78321A95471b8C2B806',
@@ -804,6 +815,7 @@ module.exports = {
             symbol: 'nextWETH',
             image: '/logos/assets/nextweth.png',
           },
+          is_pool: true,
         },
         {
           contract_address: '0x1346786E6A5e07b90184a1Ba58E55444b99DC4A2',
