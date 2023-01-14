@@ -13,6 +13,7 @@ module.exports = {
             chainName: 'Ethereum',
             rpcUrls: [
               'https://mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161',
+              'https://rpc.builder0x69.io',
               'https://rpc.ankr.com/eth',
             ],
             nativeCurrency: {
@@ -51,8 +52,9 @@ module.exports = {
             chainId: '0x38',
             chainName: 'BNB Chain',
             rpcUrls: [
+              'https://bscrpc.com',
+              'https://1rpc.io/bnb',
               'https://rpc.ankr.com/bsc',
-              'https://bsc-mainnet.public.blastapi.io',
             ],
             nativeCurrency: {
               name: 'BNB',
@@ -90,9 +92,10 @@ module.exports = {
             chainId: '0x89',
             chainName: 'Polygon',
             rpcUrls: [
-              'https://rpc.ankr.com/polygon',
               'https://matic-mainnet.chainstacklabs.com',
               'https://rpc-mainnet.matic.quiknode.pro',
+              'https://1rpc.io/matic',
+              'https://rpc.ankr.com/polygon',
             ],
             nativeCurrency: {
               name: 'Polygon',
@@ -169,9 +172,9 @@ module.exports = {
             chainId: '0xa',
             chainName: 'Optimism',
             rpcUrls: [
-              'https://rpc.ankr.com/optimism',
+              'https://optimism-mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161',
               'https://1rpc.io/op',
-              'https://mainnet.optimism.io',
+              'https://rpc.ankr.com/optimism',
             ],
             nativeCurrency: {
               name: 'Ethereum',
@@ -209,8 +212,9 @@ module.exports = {
             chainId: '0xa4b1',
             chainName: 'Arbitrum One',
             rpcUrls: [
-              'https://rpc.ankr.com/arbitrum',
               'https://arb1.arbitrum.io/rpc',
+              'https://1rpc.io/arb',
+              'https://rpc.ankr.com/arbitrum',
             ],
             nativeCurrency: {
               name: 'Ethereum',
@@ -248,6 +252,8 @@ module.exports = {
             chainId: '0x64',
             chainName: 'Gnosis',
             rpcUrls: [
+              'https://rpc.gnosischain.com',
+              'https://rpc.ap-southeast-1.gateway.fm/v1/gnosis/non-archival/mainnet',
               'https://rpc.ankr.com/gnosis',
             ],
             nativeCurrency: {
@@ -784,6 +790,7 @@ module.exports = {
               'https://polygon-mumbai.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161',
               'https://matic-mumbai.chainstacklabs.com',
               'https://rpc.ankr.com/polygon_mumbai',
+              'https://matic-testnet-archive-rpc.bwarelabs.com',
             ],
             nativeCurrency: {
               name: 'Polygon',
@@ -821,8 +828,8 @@ module.exports = {
             chainId: '0x1a4',
             chainName: 'Optimism Goerli',
             rpcUrls: [
+              'https://optimism-goerli.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161',
               'https://rpc.ankr.com/optimism_testnet',
-              'https://goerli.optimism.io',
             ],
             nativeCurrency: {
               name: 'Ethereum',
