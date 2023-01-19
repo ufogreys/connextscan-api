@@ -96,8 +96,10 @@ module.exports = {
             chainId: '0x89',
             chainName: 'Polygon',
             rpcUrls: [
+              'https://polygon-mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161',
               'https://matic-mainnet.chainstacklabs.com',
-              'https://rpc-mainnet.matic.quiknode.pro',
+              'https://poly-rpc.gateway.pokt.network',
+              'https://polygon.blockpi.network/v1/rpc/public',
               'https://1rpc.io/matic',
               'https://rpc.ankr.com/polygon',
             ],
@@ -177,6 +179,7 @@ module.exports = {
             chainName: 'Optimism',
             rpcUrls: [
               'https://optimism-mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161',
+              'https://optimism.blockpi.network/v1/rpc/public',
               'https://1rpc.io/op',
               'https://rpc.ankr.com/optimism',
             ],
@@ -216,6 +219,8 @@ module.exports = {
             chainId: '0xa4b1',
             chainName: 'Arbitrum One',
             rpcUrls: [
+              'https://arbitrum-mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161',
+              'https://arbitrum.blockpi.network/v1/rpc/public',
               'https://arb1.arbitrum.io/rpc',
               'https://1rpc.io/arb',
               'https://rpc.ankr.com/arbitrum',
@@ -256,9 +261,10 @@ module.exports = {
             chainId: '0x64',
             chainName: 'Gnosis',
             rpcUrls: [
-              'https://rpc.ap-southeast-1.gateway.fm/v1/gnosis/non-archival/mainnet',
-              'https://rpc.gnosis.gateway.fm',
+              'https://xdai-rpc.gateway.pokt.network',
+              'https://gnosischain-rpc.gateway.pokt.network',
               'https://gnosis.blockpi.network/v1/rpc/public',
+              'https://rpc.gnosis.gateway.fm',
               'https://rpc.ankr.com/gnosis',
             ],
             nativeCurrency: {
@@ -795,7 +801,6 @@ module.exports = {
               'https://polygon-mumbai.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161',
               'https://matic-mumbai.chainstacklabs.com',
               'https://rpc.ankr.com/polygon_mumbai',
-              'https://matic-testnet-archive-rpc.bwarelabs.com',
             ],
             nativeCurrency: {
               name: 'Polygon',
