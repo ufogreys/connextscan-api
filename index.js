@@ -99,7 +99,6 @@ exports.handler = async (
           };
 
           break;
-        case 'assets':
         case 'assets-price':
           try {
             response =
@@ -233,6 +232,10 @@ exports.handler = async (
               break;
             default:
               break;
+          }
+
+          if (response?.error?.config) {
+            delete response.error;
           }
 
           break;
