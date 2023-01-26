@@ -127,7 +127,8 @@ module.exports = {
         website: 'https://polygon.technology',
         coingecko_id: 'matic-network',
       },
-      /*{
+      /*
+      {
         id: 'avalanche',
         chain_id: 43114,
         domain_id: '1635148152',
@@ -165,7 +166,8 @@ module.exports = {
         color: '#e84143',
         website: 'https://avax.network',
         coingecko_id: 'avalanche-2',
-      },*/
+      },
+      */
       {
         id: 'optimism',
         chain_id: 10,
@@ -291,7 +293,8 @@ module.exports = {
         website: 'https://gnosischain.com',
         coingecko_id: 'gnosis',
       },
-      /*{
+      /*
+      {
         id: 'arbitrum_nova',
         chain_id: 42170,
         name: 'Arbitrum Nova',
@@ -328,6 +331,8 @@ module.exports = {
         website: 'https://arbitrum.io',
         coingecko_id: 'arbitrum',
       },
+      */
+      /*
       {
         id: 'fantom',
         chain_id: 250,
@@ -365,8 +370,10 @@ module.exports = {
         color: '#1869ff',
         website: 'https://fantom.foundation',
         coingecko_id: 'fantom',
-      },*/
-      /*{
+      },
+      */
+      /*
+      {
         id: 'moonbeam',
         chain_id: 1284,
         domain_id: '1650811245',
@@ -405,6 +412,8 @@ module.exports = {
         website: 'https://moonbeam.network',
         coingecko_id: 'moonbeam',
       },
+      */
+      /*
       {
         id: 'moonriver',
         chain_id: 1285,
@@ -442,268 +451,7 @@ module.exports = {
         website: 'https://moonbeam.network/networks/moonriver',
         coingecko_id: 'moonriver',
       },
-      {
-        id: 'fuse',
-        chain_id: 122,
-        name: 'Fuse',
-        short_name: 'FUSE',
-        provider_params: [
-          {
-            chainId: '0x7a',
-            chainName: 'Fuse',
-            rpcUrls: [
-              'https://rpc.fuse.io',
-            ],
-            nativeCurrency: {
-              name: 'Fuse',
-              symbol: 'FUSE',
-              decimals: 18,
-            },
-            blockExplorerUrls: [
-              'https://explorer.fuse.io',
-            ],
-          },
-        ],
-        explorer: {
-          name: 'Fuse Explorer',
-          url: 'https://explorer.fuse.io',
-          icon: '/logos/explorers/fuse.png',
-          block_path: '/blocks/{block}',
-          address_path: '/address/{address}',
-          contract_path: '/tokens/{address}',
-          contract_0_path: '/address/{address}',
-          transaction_path: '/tx/{tx}',
-        },
-        image: '/logos/chains/fuse.png',
-        color: '#fde047',
-        website: 'https://fuse.io',
-        coingecko_id: 'fuse-network-token',
-      },
-      {
-        id: 'gather',
-        chain_id: 192837465,
-        name: 'Gather',
-        short_name: 'GTH',
-        provider_params: [
-          {
-            chainId: '0xb7e7759',
-            chainName: 'Gather',
-            rpcUrls: [
-              'https://mainnet.gather.network',
-            ],
-            nativeCurrency: {
-              name: 'Gather',
-              symbol: 'GTH',
-              decimals: 18,
-            },
-            blockExplorerUrls: [
-              'https://explorer.gather.network',
-            ],
-          },
-        ],
-        explorer: {
-          name: 'Gather',
-          url: 'https://explorer.gather.network',
-          icon: '/logos/explorers/gather.png',
-          block_path: '/block/{block}',
-          address_path: '/address/{address}',
-          contract_path: '/address/{address}',
-          contract_0_path: '/address/{address}',
-          transaction_path: '/tx/{tx}',
-        },
-        image: '/logos/chains/gather.png',
-        color: '#3c4fe0',
-        website: 'https://gather.network',
-        coingecko_id: 'gather',
-      },
-      {
-        id: 'milkomeda',
-        chain_id: 2001,
-        domain_id: '25393',
-        name: 'Milkomeda',
-        short_name: 'MMEDA',
-        provider_params: [
-          {
-            chainId: '0x7d1',
-            chainName: 'Milkomeda',
-            rpcUrls: [
-              'https://rpc.c1.milkomeda.com:8545',
-            ],
-            nativeCurrency: {
-              name: 'MilkADA',
-              symbol: 'mADA',
-              decimals: 18,
-            },
-            blockExplorerUrls: [
-              'https://rpc.c1.milkomeda.com:4000',
-            ],
-          },
-        ],
-        explorer: {
-          name: 'BlockScout',
-          url: 'https://rpc.c1.milkomeda.com:4000',
-          icon: '/logos/explorers/blockscout.png',
-          block_path: '/block/{block}',
-          address_path: '/address/{address}',
-          contract_path: '/token/{address}',
-          contract_0_path: '/address/{address}',
-          transaction_path: '/tx/{tx}',
-        },
-        image: '/logos/chains/milkomeda.png',
-        color: '#a4b2d8',
-        website: 'https://milkomeda.com',
-        coingecko_id: 'cardano',
-      },     
-      {
-        id: 'cronos',
-        chain_id: 25,
-        name: 'Cronos',
-        short_name: 'CRO',
-        provider_params: [
-          {
-            chainId: '0x19',
-            chainName: 'Cronos',
-            rpcUrls: [
-              'https://evm.cronos.org',
-            ],
-            nativeCurrency: {
-              name: 'Cronos',
-              symbol: 'CRO',
-              decimals: 18,
-            },
-            blockExplorerUrls: [
-              'https://cronoscan.com',
-            ],
-          },
-        ],
-        explorer: {
-          name: 'Cronoscan',
-          url: 'https://cronoscan.com',
-          icon: '/logos/explorers/cronoscan.png',
-          block_path: '/block/{block}',
-          address_path: '/address/{address}',
-          contract_path: '/token/{address}',
-          contract_0_path: '/address/{address}',
-          transaction_path: '/tx/{tx}',
-        },
-        image: '/logos/chains/cronos.png',
-        color: '#012d74',
-        website: 'https://crypto.com',
-        coingecko_id: 'crypto-com-chain',
-      },
-      {
-        id: 'evmos',
-        chain_id: 9001,
-        domain_id: '1702260083',
-        name: 'Evmos',
-        short_name: 'EVMOS',
-        provider_params: [
-          {
-            chainId: '0x2329',
-            chainName: 'Evmos',
-            rpcUrls: [
-              'https://eth.bd.evmos.org:8545',
-            ],
-            nativeCurrency: {
-              name: 'Evmos',
-              symbol: 'EVMOS',
-              decimals: 18,
-            },
-            blockExplorerUrls: [
-              'https://evm.evmos.org',
-            ],
-          },
-        ],
-        explorer: {
-          name: 'Evmos',
-          url: 'https://evm.evmos.org',
-          icon: '/logos/explorers/evmos.png',
-          block_path: '/block/{block}',
-          address_path: '/address/{address}',
-          contract_path: '/address/{address}',
-          contract_0_path: '/address/{address}',
-          transaction_path: '/tx/{tx}',
-        },
-        image: '/logos/chains/evmos.png',
-        color: '#1f1577',
-        website: 'https://evmos.org',
-        coingecko_id: 'evmos',
-      },
-      {
-        id: 'boba',
-        chain_id: 288,
-        name: 'Boba',
-        short_name: 'BOBA',
-        provider_params: [
-          {
-            chainId: '0x120',
-            chainName: 'Boba',
-            rpcUrls: [
-              'https://mainnet.boba.network',
-            ],
-            nativeCurrency: {
-              name: 'Ethereum',
-              symbol: 'ETH',
-              decimals: 18,
-            },
-            blockExplorerUrls: [
-              'https://blockexplorer.boba.network',
-            ],
-          },
-        ],
-        explorer: {
-          name: 'Boba',
-          url: 'https://blockexplorer.boba.network',
-          icon: '/logos/explorers/boba.png',
-          block_path: '/blocks/{block}',
-          address_path: '/address/{address}',
-          contract_path: '/tokens/{address}',
-          contract_0_path: '/address/{address}',
-          transaction_path: '/tx/{tx}',
-        },
-        image: '/logos/chains/boba.png',
-        color: '#cbff00',
-        website: 'https://boba.network',
-        coingecko_id: 'boba-network',
-      },
-      {
-        id: 'harmony',
-        chain_id: 1666600000,
-        name: 'Harmony',
-        short_name: 'HONE',
-        provider_params: [
-          {
-            chainId: '0x120',
-            chainName: 'Harmony',
-            rpcUrls: [
-              'https://rpc.ankr.com/harmony',
-              'https://api.harmony.one',
-            ],
-            nativeCurrency: {
-              name: 'One',
-              symbol: 'ONE',
-              decimals: 18,
-            },
-            blockExplorerUrls: [
-              'https://explorer.harmony.one',
-            ],
-          },
-        ],
-        explorer: {
-          name: 'Harmony',
-          url: 'https://explorer.harmony.one',
-          icon: '/logos/explorers/harmony.png',
-          block_path: '/block/{block}',
-          address_path: '/address/{address}',
-          contract_path: '/address/{address}',
-          contract_0_path: '/address/{address}',
-          transaction_path: '/tx/{tx}',
-        },
-        image: '/logos/chains/harmony.png',
-        color: '#42decd',
-        website: 'https://harmony.one',
-        coingecko_id: 'harmony',
-      },*/
+      */
     ],
   },
   testnet: {
@@ -747,7 +495,8 @@ module.exports = {
         website: 'https://goerli.net',
         coingecko_id: 'ethereum',
       },
-      /*{
+      /*
+      {
         id: 'binance',
         chain_id: 97,
         name: 'BNB Chain',
@@ -785,7 +534,8 @@ module.exports = {
         color: '#e8b30b',
         website: 'https://bnbchain.world',
         coingecko_id: 'binancecoin',
-      },*/
+      },
+      */
       {
         id: 'polygon',
         chain_id: 80001,
@@ -865,7 +615,8 @@ module.exports = {
         website: 'https://optimism.io',
         coingecko_id: 'ethereum',
       },
-      /*{
+      /*
+      {
         id: 'arbitrum',
         chain_id: 421613,
         domain_id: '1734439522',
@@ -903,6 +654,8 @@ module.exports = {
         website: 'https://arbitrum.io',
         coingecko_id: 'arbitrum',
       },
+      */
+      /*
       {
         id: 'moonbeam',
         chain_id: 1287,
@@ -940,7 +693,8 @@ module.exports = {
         color: '#53cbc8',
         website: 'https://moonbeam.network',
         coingecko_id: 'moonbeam',
-      },*/
+      },
+      */
     ],
   },
 };

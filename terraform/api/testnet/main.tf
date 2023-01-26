@@ -46,7 +46,7 @@ resource "aws_iam_policy_attachment" "attachment" {
 
 resource "aws_opensearch_domain" "domain" {
   domain_name     = "${var.project_name}-${var.environment}"
-  engine_version  = "OpenSearch_1.3"
+  engine_version  = "OpenSearch_2.3"
   cluster_config {
     instance_type            = "t3.medium.search"
     instance_count           = 1
@@ -115,7 +115,6 @@ resource "aws_lambda_function" "function" {
       INDEXER_URL      = "https://${aws_opensearch_domain.domain.endpoint}"
       INDEXER_USERNAME = var.indexer_username
       INDEXER_PASSWORD = var.indexer_password
-      LOG_LEVEL        = var.log_level
       WHITELISTS       = var.whitelists
     }
   }

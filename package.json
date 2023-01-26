@@ -19,8 +19,8 @@
   },
   "homepage": "https://github.com/CoinHippo-Labs/connextscan-api#readme",
   "dependencies": {
-    "aws-sdk": "^2.1218.0",
-    "axios": "^0.27.2",
+    "aws-sdk": "^2.1302.0",
+    "axios": "^1.2.5",
     "config-yml": "^0.10.3",
     "lodash": "^4.17.21",
     "moment": "^2.29.4"

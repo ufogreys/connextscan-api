@@ -18,7 +18,7 @@ provider "aws" {
 module "next_image_optimizer" {
   source             = "milliHQ/next-js-image-optimization/aws"
   deployment_name    = "connext-next-image"
-  next_image_domains = ["metadata.ens.domains", "connextscan.io", "www.connextscan.io", "staging.connextscan.io", "testnet.connextscan.io", "bridge.connext.network", "staging.bridge.connext.network", "testnet.bridge.connext.network", "testnet-staging.bridge.connext.network", "amarok.connextscan.io", "staging.amarok.connextscan.io", "testnet.amarok.connextscan.io", "staging.testnet.amarok.connextscan.io", "amarok.bridge.connext.network", "amarok-testnet.coinhippo.io", "amarok-testnet-staging.coinhippo.io"]
+  next_image_domains = ["metadata.ens.domains", "connextscan.io", "www.connextscan.io", "staging.connextscan.io", "testnet.connextscan.io", "bridge.connext.network", "staging.bridge.connext.network", "testnet.bridge.connext.network", "testnet-staging.bridge.connext.network", "amarok.connextscan.io", "staging.amarok.connextscan.io", "testnet.amarok.connextscan.io", "staging.testnet.amarok.connextscan.io", "amarok.bridge.connext.network"]
 }
 
 output "domain" {

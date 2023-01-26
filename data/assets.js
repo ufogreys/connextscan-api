@@ -1,6 +1,7 @@
 module.exports = {
   mainnet: [
-    /*{
+    /*
+    {
       id: 'usdt',
       symbol: 'USDT',
       name: 'Tether',
@@ -99,7 +100,8 @@ module.exports = {
           decimals: 6,
         },
       ],
-    },*/
+    },
+    */
     {
       id: 'usdc',
       symbol: 'USDC',
@@ -245,7 +247,8 @@ module.exports = {
         },*/
       ],
     },
-    /*{
+    /*
+    {
       id: 'dai',
       symbol: 'DAI',
       name: 'Dai',
@@ -345,7 +348,8 @@ module.exports = {
           decimals: 18,
         },
       ],
-    },*/
+    },
+    */
     {
       id: 'eth',
       symbol: 'ETH',
@@ -494,7 +498,8 @@ module.exports = {
         },*/
       ],
     },
-    /*{
+    /*
+    {
       id: 'wbtc',
       symbol: 'WBTC',
       name: 'Wrapped Bitcoin',
@@ -584,7 +589,8 @@ module.exports = {
           decimals: 8,
         },
       ],
-    },*/
+    },
+    */
     {
       id: 'kp3r',
       symbol: 'KP3R',
