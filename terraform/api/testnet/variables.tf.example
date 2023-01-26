@@ -38,11 +38,6 @@ variable "api_gateway_integration_id" {
   default     = ""
 }
 
-variable "log_level" {
-  description = "Log level"
-  default     = "debug"
-}
-
 variable "whitelists" {
   description = "Wallet whitelists"
   default     = ""

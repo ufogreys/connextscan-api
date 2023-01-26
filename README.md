@@ -23,6 +23,7 @@ yarn
 ### Deploy services
 ```bash
 cd ./terraform/api/testnet
+cp variables.tf.example variables.tf
 terraform init
 terraform apply
 ```
