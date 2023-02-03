@@ -3,12 +3,8 @@ exports.handler = async (
   context,
   callback,
 ) => {
-  const axios = require('axios');
-  const AWS = require('aws-sdk');
   const config = require('config-yml');
-  const _ = require('lodash');
 
-  const assets_price = require('./services/assets-price');
   const {
     get_params,
   } = require('./utils');
@@ -20,14 +16,6 @@ exports.handler = async (
   environment =
     process.env.ENVIRONMENT ||
     environment;
-
-  const evm_chains_data =
-    require('./data')?.chains?.[environment]?.evm ||
-    [];
-
-  const assets_data =
-    require('./data')?.assets?.[environment] ||
-    [];
 
   // parse function event to req
   const req = {
@@ -64,45 +52,23 @@ exports.handler = async (
       const {
         collection,
       } = { ...params };
-      let {
-        path,
-        data,
-      } = { ...params };
 
-      const _module =
-        (params.module || '')
-          .trim()
-          .toLowerCase();
-
-      path =
-        path ||
-        '';
-
-      delete params.module;
-      delete params.path;
-
-      switch (_module) {
+      switch (params.module) {
         case 'data':
-          switch (collection) {
-            case 'chains':
-              response = require('./data')?.chains?.[environment];
+          const data = require('./data');
 
-              break;
-            case 'evm_chains':
-              response = evm_chains_data;
-
-              break;
-            case 'assets':
-              response = assets_data;
-
-              break;
-          };
+          if (collection) {
+            response = data[collection]?.[environment];
+          }
+          else {
+            response = data;
+          }
 
           break;
         case 'assets-price':
           try {
             response =
-              await assets_price(
+              await require(`./services/${params.module}`)(
                 params,
               );
           } catch (error) {
@@ -111,131 +77,6 @@ exports.handler = async (
               code: 400,
               message: error?.message,
             };
-          }
-
-          break;
-        case 'bridge':
-          const {
-            bridge,
-          } = { ...config?.[environment] };
-
-          switch (collection) {
-            case 'announcement':
-              const region = process.env.REGION;
-
-              const s3_bucket = bridge?.config?.aws?.s3_bucket;
-
-              const s3_bucket_key =
-                `${collection}${
-                  environment ?
-                    `_${environment}` :
-                    ''
-                }.json`;
-
-              AWS.config.update(
-                {
-                  region,
-                },
-              );
-
-              const s3 = new AWS.S3();
-
-              switch (path) {
-                case '/set':
-                  const [
-                    username,
-                    password,
-                  ] = (
-                    req.headers.authorization ?
-                      Buffer.from(
-                        req.headers.authorization,
-                        'base64',
-                      )
-                      .toString()
-                      .split(':') :
-                      []
-                  );
-
-                  const whitelists =
-                    _.uniq(
-                      (
-                        process.env.WHITELISTS ||
-                        bridge?.config?.whitelists ||
-                        ''
-                      )
-                      .split(',')
-                      .map(a =>
-                        a
-                          .trim()
-                          .toLowerCase()
-                      )
-                      .filter(a => a)
-                    );
-
-                  if (
-                    whitelists
-                      .includes(
-                        password?.toLowerCase()
-                      )
-                  ) {
-                    data =
-                      JSON.stringify(
-                        {
-                          data,
-                        }
-                      );
-
-                    response =
-                      await new Promise(
-                        resolve =>
-                          s3.putObject(
-                            {
-                              Bucket: s3_bucket,
-                              Key: s3_bucket_key,
-                              Body: data,
-                              ACL: 'private',
-                            },
-                            (
-                              err,
-                              data,
-                            ) =>
-                              resolve(
-                                data?.Body ?
-                                  data.Body
-                                    .toString() :
-                                  null
-                              )
-                          )
-                      );
-                  }
-
-                  break;
-                default:
-                  const _response =
-                    await axios
-                      .get(
-                        `https://s3.${region}.amazonaws.com/${s3_bucket}/${s3_bucket_key}`,
-                      )
-                      .catch(error => {
-                        return {
-                          data: {
-                            error,
-                          },
-                        };
-                      });
-
-                  response = _response?.data;
-
-                  break;
-              }
-
-              break;
-            default:
-              break;
-          }
-
-          if (response?.error?.config) {
-            delete response.error;
           }
 
           break;

@@ -17,7 +17,7 @@ provider "archive" {}
 
 data "archive_file" "zip" {
   type        = "zip"
-  source_dir  = "../../../"
+  source_dir  = "../../"
   excludes    = ["terraform", ".gitignore", "README.md", "yarn.lock"]
   output_path = "${var.package_name}.zip"
 }
@@ -34,24 +34,9 @@ data "aws_iam_policy_document" "policy" {
   }
 }
 
-resource "aws_iam_policy" "policy_s3" {
-  name   = "s3_policy"
-  policy = jsonencode({
-    Version = "2012-10-17"
-    Statement = [
-      {
-        Effect   = "Allow"
-        Action   = ["s3:PutObject", "s3:PutObjectAcl", "s3:GetObject", "s3:GetObjectAcl", "s3:DeleteObject"]
-        Resource = ["*"]
-      }
-    ]
-  })
-}
-
 resource "aws_iam_role" "role" {
-  name                = "${var.project_name}-role-lambda"
+  name                = "${var.project_name}-role-lambda-${var.environment}"
   assume_role_policy  = data.aws_iam_policy_document.policy.json
-  managed_policy_arns = [aws_iam_policy.policy_s3.arn]
 }
 
 resource "aws_iam_policy_attachment" "attachment" {
@@ -64,7 +49,7 @@ resource "aws_opensearch_domain" "domain" {
   domain_name     = "${var.project_name}-${var.environment}"
   engine_version  = "OpenSearch_2.3"
   cluster_config {
-    instance_type            = "t3.medium.search"
+    instance_type            = "t3.small.search"
     instance_count           = 1
     dedicated_master_enabled = false
     zone_awareness_enabled   = false
@@ -73,7 +58,7 @@ resource "aws_opensearch_domain" "domain" {
   ebs_options {
     ebs_enabled = true
     volume_type = "gp2"
-    volume_size = 32
+    volume_size = 12
   }
   encrypt_at_rest {
     enabled = true
@@ -131,7 +116,6 @@ resource "aws_lambda_function" "function" {
       INDEXER_URL      = "https://${aws_opensearch_domain.domain.endpoint}"
       INDEXER_USERNAME = var.indexer_username
       INDEXER_PASSWORD = var.indexer_password
-      WHITELISTS       = var.whitelists
     }
   }
   kms_key_arn      = ""

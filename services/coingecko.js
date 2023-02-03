@@ -2,11 +2,8 @@ const axios = require('axios');
 const config = require('config-yml');
 
 const {
-  endpoints,
-} = { ...config?.external_api };
-const {
   coingecko,
-} = { ...endpoints };
+} = { ...config?.external_api };
 
 module.exports = async (
   path = '',
@@ -19,6 +16,7 @@ module.exports = async (
       axios.create(
         {
           baseURL: coingecko,
+          timeout: 10000,
         },
       );
 

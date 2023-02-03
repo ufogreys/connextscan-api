@@ -20,7 +20,17 @@ const equals_ignore_case = (
   ) ||
   a?.toLowerCase() === b?.toLowerCase();
 
+const sleep = ms =>
+  new Promise(
+    resolve =>
+      setTimeout(
+        resolve,
+        ms,
+      )
+  );
+
 module.exports = {
   get_params,
   equals_ignore_case,
+  sleep,
 };

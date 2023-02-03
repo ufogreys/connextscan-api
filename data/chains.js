@@ -52,12 +52,9 @@ module.exports = {
             chainId: '0x38',
             chainName: 'BNB Chain',
             rpcUrls: [
-              'https://bsc.blockpi.network/v1/rpc/public',
-              'https://rpc-bsc.bnb48.club',
-              'https://bsc-mainnet.nodereal.io/v1/64a9df0874fb4a93b9d0a3849de012d3',
+              'https://rpc.ankr.com/bsc',
               'https://1rpc.io/bnb',
               'https://bscrpc.com',
-              'https://rpc.ankr.com/bsc',
             ],
             nativeCurrency: {
               name: 'BNB',
@@ -413,45 +410,6 @@ module.exports = {
         coingecko_id: 'moonbeam',
       },
       */
-      /*
-      {
-        id: 'moonriver',
-        chain_id: 1285,
-        name: 'Moonriver',
-        short_name: 'MOVR',
-        provider_params: [
-          {
-            chainId: '0x505',
-            chainName: 'Moonriver',
-            rpcUrls: [
-              'https://rpc.api.moonriver.moonbeam.network',
-            ],
-            nativeCurrency: {
-              name: 'Moonriver',
-              symbol: 'MOVR',
-              decimals: 18,
-            },
-            blockExplorerUrls: [
-              'https://moonriver.moonscan.io',
-            ],
-          },
-        ],
-        explorer: {
-          name: 'Moonscan',
-          url: 'https://moonriver.moonscan.io',
-          icon: '/logos/explorers/moonriver.png',
-          block_path: '/block/{block}',
-          address_path: '/address/{address}',
-          contract_path: '/token/{address}',
-          contract_0_path: '/address/{address}',
-          transaction_path: '/tx/{tx}',
-        },
-        image: '/logos/chains/moonriver.png',
-        color: '#e6af07',
-        website: 'https://moonbeam.network/networks/moonriver',
-        coingecko_id: 'moonriver',
-      },
-      */
     ],
   },
   testnet: {
@@ -506,9 +464,8 @@ module.exports = {
             chainId: '0x61',
             chainName: 'BNB Chain Testnet',
             rpcUrls: [
-              'https://data-seed-prebsc-1-s1.binance.org:8545',
-              'https://data-seed-prebsc-2-s1.binance.org:8545',
-              'https://data-seed-prebsc-1-s2.binance.org:8545',
+              'https://bsc-testnet.public.blastapi.io',
+              'https://rpc.ankr.com/bsc_testnet_chapel',
             ],
             nativeCurrency: {
               name: 'BNB',

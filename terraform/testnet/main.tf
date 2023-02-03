@@ -17,7 +17,7 @@ provider "archive" {}
 
 data "archive_file" "zip" {
   type        = "zip"
-  source_dir  = "../../../"
+  source_dir  = "../../"
   excludes    = ["terraform", ".gitignore", "README.md", "yarn.lock"]
   output_path = "${var.package_name}.zip"
 }
@@ -34,13 +34,14 @@ data "aws_iam_policy_document" "policy" {
   }
 }
 
-data "aws_iam_role" "role" {
-  name = "${var.project_name}-role-lambda"
+resource "aws_iam_role" "role" {
+  name                = "${var.project_name}-role-lambda-${var.environment}"
+  assume_role_policy  = data.aws_iam_policy_document.policy.json
 }
 
 resource "aws_iam_policy_attachment" "attachment" {
   name       = "${var.project_name}-attachment"
-  roles      = [data.aws_iam_role.role.name]
+  roles      = [aws_iam_role.role.name]
   policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
 }
 
@@ -48,7 +49,7 @@ resource "aws_opensearch_domain" "domain" {
   domain_name     = "${var.project_name}-${var.environment}"
   engine_version  = "OpenSearch_2.3"
   cluster_config {
-    instance_type            = "t3.medium.search"
+    instance_type            = "t3.small.search"
     instance_count           = 1
     dedicated_master_enabled = false
     zone_awareness_enabled   = false
@@ -57,7 +58,7 @@ resource "aws_opensearch_domain" "domain" {
   ebs_options {
     ebs_enabled = true
     volume_type = "gp2"
-    volume_size = 32
+    volume_size = 12
   }
   encrypt_at_rest {
     enabled = true
@@ -102,7 +103,7 @@ resource "aws_lambda_function" "function" {
   function_name    = "${var.package_name}-${var.environment}"
   filename         = data.archive_file.zip.output_path
   source_code_hash = data.archive_file.zip.output_base64sha256
-  role             = data.aws_iam_role.role.arn
+  role             = aws_iam_role.role.arn
   handler          = "index.handler"
   runtime          = "nodejs14.x"
   timeout          = 30
@@ -115,7 +116,6 @@ resource "aws_lambda_function" "function" {
       INDEXER_URL      = "https://${aws_opensearch_domain.domain.endpoint}"
       INDEXER_USERNAME = var.indexer_username
       INDEXER_PASSWORD = var.indexer_password
-      WHITELISTS       = var.whitelists
     }
   }
   kms_key_arn      = ""

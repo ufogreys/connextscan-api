@@ -5,19 +5,4 @@
 environment: testnet # [testnet|mainnet]
 
 external_api:
-  endpoints:
-    coingecko: "https://api.coingecko.com/api/v3/"
-
-mainnet:
-  bridge:
-    config:
-      aws:
-        s3_bucket: "config.amarok.bridge.connext.network"
-      whitelists: ""
-
-testnet:
-  bridge:
-    config:
-      aws:
-        s3_bucket: "config.amarok.bridge.connext.network"
-      whitelists: ""
+  coingecko: "https://api.coingecko.com/api/v3/"

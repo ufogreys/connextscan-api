@@ -37,8 +37,3 @@ variable "api_gateway_integration_id" {
   description = "API gateway integration id"
   default     = ""
 }
-
-variable "whitelists" {
-  description = "Wallet whitelists"
-  default     = ""
-}
