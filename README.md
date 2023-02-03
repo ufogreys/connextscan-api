@@ -1,29 +1,17 @@
-# Connextscan API
+# Connext Network Explorer - Lambda functions
+This repository is a subproject of the [Connext Network Explorer](https://v1.connextscan.io). The implemented services here are used for retrieving, normalizing, processing, aggregating, and managing the [Connext Network Explorer Website](https://github.com/CoinHippo-Labs/connextscan-ui/tree/v1). We design and implement them as serverless services to interact with `Subgraph Endpoints`, `Covalent API`, `Coingecko API` and `Blockscout API`.
 
-## Endpoints
-- mainnet: [https://api.connextscan.io](https://api.connextscan.io)
-- testnet: [https://testnet.api.connextscan.io](https://testnet.api.connextscan.io)
+The implementation is based on Amazon Web Services' services, including ([AWS Lambda](https://aws.amazon.com/lambda), [AWS API Gateway](https://aws.amazon.com/api-gateway), [AWS EventBridge](https://aws.amazon.com/eventbridge) and [Amazon OpenSearch Service](https://aws.amazon.com/opensearch-service).
 
-## Stacks
-- AWS Opensearch
-- AWS Lambda
-- AWS API Gateway
+## Functions
+- [requester](/requester) - A function for requesting data from `Subgraph`, `Covalent API`, `Coingecko API` and `Blockscout API`. The [AWS API Gateway](https://aws.amazon.com/api-gateway) is used as the trigger.
+- [opensearcher](/opensearcher) - A function for interacting with our implemented indexers, which is resposible for indexing day metrics (from subgraph v0 & current version), etc. The functionalities of this part are implemented based on the [Amazon OpenSearch Service](https://aws.amazon.com/opensearch-service).
+- [crawler](/crawler) - A function for collecting data from `Subgraph` and indexing data to OpenSearch Service, which is implemented based on [AWS EventBridge](https://aws.amazon.com/eventbridge).
 
-## Deployment
-### Prerequisites
-1. [Install AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-prereqs.html)
-2. [Configuring the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)
-3. [Install terraform](https://learn.hashicorp.com/tutorials/terraform/install-cli)
+## Architecture Design
+<img width="857" alt="explorer-architecture" src="https://user-images.githubusercontent.com/13881651/138571018-9f20fb13-483e-42ce-ab7a-c01d0285a8ac.png">
 
-### Install dependencies
-```bash
-yarn
-```
-
-### Deploy services
-```bash
-cd ./terraform/api/testnet
-cp variables.tf.example variables.tf
-terraform init
-terraform apply
-```
+## Follow us
+- [Website](https://coinhippo.io)
+- [Twitter](https://twitter.com/coinhippoHQ)
+- [Telegram](https://t.me/CoinHippoChannel)
