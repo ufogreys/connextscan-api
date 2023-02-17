@@ -672,7 +672,7 @@ module.exports = {
       ],
     },
     {
-      id: 'kp3r-lp',
+      id: 'klp',
       symbol: 'KLP',
       name: 'Keep3rLP',
       image: '/logos/assets/kp3r.png',
