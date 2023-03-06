@@ -615,7 +615,7 @@ module.exports = {
         chain_id: 59140,
         domain_id: '1668247156',
         name: 'ConsenSys zkEVM',
-        short_name: 'zkEVM',
+        short_name: 'ZKEVM',
         provider_params: [
           {
             chainId: '0xe704',
@@ -646,6 +646,45 @@ module.exports = {
         image: '/logos/chains/consensys.png',
         color: '#264cc4',
         website: 'https://consensys.net',
+        coingecko_id: '',
+      },
+      ,
+      {
+        id: 'zksync',
+        chain_id: 280,
+        domain_id: '2053862260',
+        name: 'zkSync',
+        short_name: 'ZKSYNC',
+        provider_params: [
+          {
+            chainId: '0x118',
+            chainName: 'zkSync Era Goerli',
+            rpcUrls: [
+              'https://zksync2-testnet.zksync.dev',
+            ],
+            nativeCurrency: {
+              name: 'Ethereum',
+              symbol: 'ETH',
+              decimals: 18,
+            },
+            blockExplorerUrls: [
+              'https://goerli.explorer.zksync.io',
+            ],
+          },
+        ],
+        explorer: {
+          name: 'zkSync',
+          url: 'https://goerli.explorer.zksync.io',
+          icon: '/logos/explorers/zksync.png',
+          block_path: '/block/{block}',
+          address_path: '/address/{address}',
+          contract_path: '/address/{address}',
+          contract_0_path: '/address/{address}',
+          transaction_path: '/tx/{tx}',
+        },
+        image: '/logos/chains/zksync.png',
+        color: '#12142b',
+        website: 'https://zksync.io',
         coingecko_id: '',
       },
       /*
