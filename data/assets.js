@@ -784,6 +784,12 @@ module.exports = {
           decimals: 18,
           symbol: 'TEST',
         },
+        {
+          contract_address: '0xB706319D37b945727E71ae0d4353699d19112576',
+          chain_id: 59140,
+          decimals: 18,
+          symbol: 'TEST',
+        },
       ],
     },
     {

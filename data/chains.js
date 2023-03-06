@@ -610,6 +610,44 @@ module.exports = {
         website: 'https://arbitrum.io',
         coingecko_id: 'arbitrum',
       },
+      {
+        id: 'consensys',
+        chain_id: 59140,
+        domain_id: '1668247156',
+        name: 'ConsenSys zkEVM',
+        short_name: 'zkEVM',
+        provider_params: [
+          {
+            chainId: '0xe704',
+            chainName: 'ConsenSys zkEVM',
+            rpcUrls: [
+              'https://consensys-zkevm-goerli-prealpha.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161',
+            ],
+            nativeCurrency: {
+              name: 'Ethereum',
+              symbol: 'ETH',
+              decimals: 18,
+            },
+            blockExplorerUrls: [
+              'https://explorer.goerli.zkevm.consensys.net',
+            ],
+          },
+        ],
+        explorer: {
+          name: 'BlockScout',
+          url: 'https://explorer.goerli.zkevm.consensys.net',
+          icon: '/logos/explorers/blockscout.png',
+          block_path: '/block/{block}',
+          address_path: '/address/{address}',
+          contract_path: '/token/{address}',
+          contract_0_path: '/address/{address}',
+          transaction_path: '/tx/{tx}',
+        },
+        image: '/logos/chains/consensys.png',
+        color: '#264cc4',
+        website: 'https://consensys.net',
+        coingecko_id: '',
+      },
       /*
       {
         id: 'moonbeam',
