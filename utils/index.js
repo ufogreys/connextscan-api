@@ -1,4 +1,4 @@
-const get_params = req => {
+const getParams = req => {
   const {
     query,
     body,
@@ -10,27 +10,119 @@ const get_params = req => {
   };
 };
 
-const equals_ignore_case = (
+const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+
+const equalsIgnoreCase = (
   a,
   b,
 ) =>
-  (
-    !a &&
-    !b
-  ) ||
+  (!a && !b) ||
   a?.toLowerCase() === b?.toLowerCase();
 
-const sleep = ms =>
-  new Promise(
-    resolve =>
-      setTimeout(
-        resolve,
-        ms,
+const toCase = (
+  string,
+  to_case = 'normal',
+) => {
+  if (typeof string === 'string') {
+    string = string.trim();
+
+    switch (to_case) {
+      case 'upper':
+        string = string.toUpperCase();
+        break;
+      case 'lower':
+        string = string.toLowerCase();
+        break;
+      default:
+        break;
+    }
+  }
+
+  return string;
+};
+
+const split = (
+  string,
+  to_case = 'normal',
+  delimiter = ',',
+  filter_blank = true,
+) =>
+  (typeof string !== 'string' && ![undefined, null].includes(string) ?
+    [string] :
+    (typeof string === 'string' ?
+      string :
+      ''
+    )
+    .split(delimiter)
+    .map(s =>
+      toCase(
+        s,
+        to_case,
       )
+    )
+  )
+  .filter(s =>
+    !filter_blank ||
+    s
   );
 
+const toArray = (
+  x,
+  to_case = 'normal',
+  delimiter = ',',
+  filter_blank = true,
+) =>
+  Array.isArray(x) ?
+    x
+      .map(v =>
+        toCase(
+          v,
+          to_case,
+        )
+      )
+      .filter(v =>
+        !filter_blank ||
+        v
+      ) :
+    split(
+      x,
+      to_case,
+      delimiter,
+      filter_blank,
+    );
+
+const find = (
+  x,
+  list = [],
+) =>
+  list
+    .find(_x =>
+      typeof x === 'string' ?
+        equalsIgnoreCase(
+          _x,
+          x,
+        ) :
+        _x === x
+    );
+
+const includesStringList = (
+  x,
+  list = [],
+) =>
+  toArray(list)
+    .findIndex(s =>
+      toArray(x)
+        .findIndex(_x =>
+          _x.includes(s)
+        ) > -1
+    ) > -1;
+
 module.exports = {
-  get_params,
-  equals_ignore_case,
+  getParams,
   sleep,
+  equalsIgnoreCase,
+  split,
+  toArray,
+  find,
+  includesStringList,
 };

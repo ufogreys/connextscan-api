@@ -205,6 +205,7 @@ module.exports = {
         color: '#dc2626',
         website: 'https://optimism.io',
         coingecko_id: 'optimism',
+        gas_coingecko_id: 'ethereum',
       },
       {
         id: 'arbitrum',
@@ -571,6 +572,7 @@ module.exports = {
         color: '#dc2626',
         website: 'https://optimism.io',
         coingecko_id: 'ethereum',
+        gas_coingecko_id: 'ethereum',
       },
       {
         id: 'arbitrum',
@@ -647,8 +649,8 @@ module.exports = {
         color: '#264cc4',
         website: 'https://consensys.net',
         coingecko_id: '',
+        gas_coingecko_id: 'ethereum',
       },
-      ,
       {
         id: 'zksync',
         chain_id: 280,
@@ -686,6 +688,7 @@ module.exports = {
         color: '#12142b',
         website: 'https://zksync.io',
         coingecko_id: '',
+        gas_coingecko_id: 'ethereum',
       },
       /*
       {

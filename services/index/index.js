@@ -1,18 +1,25 @@
 const axios = require('axios');
-
+const _ = require('lodash');
 const {
-  normalize_obj,
+  normalizeObject,
 } = require('./utils');
+const {
+  log,
+  equalsIgnoreCase,
+  toArray,
+} = require('../../utils');
+
+// indexer credential
+const indexer_url = process.env.INDEXER_URL;
+const indexer_username = process.env.INDEXER_USERNAME;
+const indexer_password = process.env.INDEXER_PASSWORD;
+
+const service_name = 'index';
 
 const crud = async (
   params = {},
 ) => {
   let response;
-
-  // initial indexer info
-  const indexer_url = process.env.INDEXER_URL;
-  const indexer_username = process.env.INDEXER_USERNAME;
-  const indexer_password = process.env.INDEXER_PASSWORD;
 
   // request parameters
   const {
@@ -32,15 +39,13 @@ const crud = async (
   } = { ...params };
 
   // normalize
-  path =
-    path ||
-    '';
+  path = path || '';
 
   use_raw_data =
     typeof use_raw_data === 'boolean' ?
       use_raw_data :
       typeof use_raw_data !== 'string' ||
-      equals_ignore_case(
+      equalsIgnoreCase(
         use_raw_data,
         'true',
       );
@@ -49,7 +54,7 @@ const crud = async (
     typeof update_only === 'boolean' ?
       update_only :
       typeof update_only !== 'string' ||
-      equals_ignore_case(
+      equalsIgnoreCase(
         update_only,
         'true',
       );
@@ -58,46 +63,32 @@ const crud = async (
     typeof track_total_hits === 'boolean' ?
       track_total_hits :
       typeof track_total_hits !== 'string' ||
-      equals_ignore_case(
+      equalsIgnoreCase(
         track_total_hits,
         'true',
       );
 
-  if (
-    indexer_url &&
-    collection
-  ) {
+  if (!isNaN(height)) {
+    height = Number(height);
+  }
+
+  if (indexer_url && collection) {
+    const _params = _.cloneDeep(params);
+
     delete params.collection;
     delete params.method;
     delete params.path;
     delete params.id;
-    delete params.track_total_hits;
     delete params.use_raw_data;
     delete params.update_only;
 
-    const object_fields =
-      [
-        'query',
-        'aggs',
-        'sort',
-        'fields',
-      ];
+    const object_fields = ['query', 'aggs', 'sort', 'fields'];
 
     object_fields
       .forEach(f => {
         if (params[f]) {
           try {
-            params[f] =
-              params[f].startsWith('[') &&
-              params[f].endsWith(']') ?
-                JSON.parse(
-                  params[f]
-                ) :
-                normalize_obj(
-                  JSON.parse(
-                    params[f]
-                  )
-                );
+            params[f] = params[f].startsWith('[') && params[f].endsWith(']') ? JSON.parse(params[f]) : normalizeObject(JSON.parse(params[f]));
           } catch (error) {}
         }
       });
@@ -106,7 +97,9 @@ const crud = async (
       axios.create(
         {
           baseURL: indexer_url,
-          timeout: 15000,
+          headers: {
+            'Accept-Encoding': 'gzip',
+          },
         },
       );
 
@@ -118,9 +111,7 @@ const crud = async (
     // request to indexer
     switch (method) {
       case 'get':
-        path =
-          path ||
-          `/${collection}/_doc/${id}`;
+        path = path || `/${collection}/_doc/${id}`;
 
         response =
           await indexer
@@ -134,7 +125,7 @@ const crud = async (
             .catch(error => {
               return {
                 data: {
-                  error,
+                  error: error?.response?.data,
                 },
               };
             });
@@ -156,9 +147,7 @@ const crud = async (
         break;
       case 'set':
       case 'update':
-        path =
-          path ||
-          `/${collection}/_doc/${id}`;
+        path = path || `/${collection}/_doc/${id}`;
 
         if (path.includes('/_update_by_query')) {
           try {
@@ -172,7 +161,7 @@ const crud = async (
                 .catch(error => {
                   return {
                     data: {
-                      error,
+                      error: error?.response?.data,
                     },
                   };
                 });
@@ -198,7 +187,7 @@ const crud = async (
             .catch(error => {
               return {
                 data: {
-                  error,
+                  error: error?.response?.data,
                 },
               };
             });
@@ -209,21 +198,9 @@ const crud = async (
 
           // retry with update / insert
           if (error) {
-            path =
-              path
-                .replace(
-                  path.includes('_doc') ?
-                    '_doc' :
-                    '_update',
-                  path.includes('_doc') ?
-                    '_update' :
-                    '_doc',
-                );
+            path = path.replace(path.includes('_doc') ? '_doc' : '_update', path.includes('_doc') ? '_update' : '_doc');
 
-            if (
-              update_only &&
-              path.includes('_doc')
-            ) {
+            if (update_only && path.includes('_doc')) {
               const _response =
                 await indexer
                   .get(
@@ -233,7 +210,7 @@ const crud = async (
                   .catch(error => {
                     return {
                       data: {
-                        error,
+                        error: error?.response?.data,
                       },
                     };
                   });
@@ -244,12 +221,7 @@ const crud = async (
               } = { ..._response?.data };
 
               if (_source) {
-                path =
-                  path
-                    .replace(
-                      '_doc',
-                      '_update',
-                    );
+                path = path.replace('_doc', '_update');
               }
             }
 
@@ -272,7 +244,7 @@ const crud = async (
               .catch(error => {
                 return {
                   data: {
-                    error,
+                    error: error?.response?.data,
                   },
                 };
               });
@@ -281,9 +253,7 @@ const crud = async (
         break;
       case 'query':
       case 'search':
-        path =
-          path ||
-          `/${collection}/_search`;
+        path = path || `/${collection}/_search`;
 
         const search_data =
           use_raw_data ?
@@ -303,26 +273,25 @@ const crud = async (
                           'sort',
                           'fields',
                           '_source',
-                        ].includes(k)
+                        ]
+                        .includes(k)
                       )
                       .map(([k, v]) => {
-                        // override field from params
+                        // overide field from params
                         switch (k) {
                           case 'id':
-                            if (
-                              !v &&
-                              id
-                            ) {
+                            if (!v && id) {
                               v = id;
                             }
                             break;
                           default:
                             break;
                         }
+
                         // set match query
                         return {
                           match: {
-                            [`${k}`]: v,
+                            [k]: v,
                           },
                         };
                       }),
@@ -331,14 +300,8 @@ const crud = async (
             };
 
         if (path.endsWith('/_search')) {
-          search_data.from =
-            !isNaN(from) ?
-              Number(from) :
-              0;
-          search_data.size =
-            !isNaN(size) ?
-              Number(size) :
-              10;
+          search_data.from = !isNaN(from) ? Number(from) : 0;
+          search_data.size = !isNaN(size) ? Number(size) : 10;
           search_data.sort = sort;
           search_data.track_total_hits = track_total_hits;
         }
@@ -353,7 +316,7 @@ const crud = async (
             .catch(error => {
               return {
                 data: {
-                  error,
+                  error: error?.response?.data,
                 },
               };
             });
@@ -364,12 +327,11 @@ const crud = async (
         } = { ...response?.data };
 
         response =
-          hits?.hits ||
-          aggregations ?
+          hits?.hits || aggregations ?
             {
               data: {
                 data:
-                  (hits?.hits || [])
+                  toArray(hits?.hits)
                     .map(d => {
                       const {
                         _id,
@@ -391,9 +353,7 @@ const crud = async (
         break;
       case 'delete':
       case 'remove':
-        path =
-          path ||
-          `/${collection}/_doc/${id}`;
+        path = path || `/${collection}/_doc/${id}`;
 
         response =
           await indexer
@@ -407,7 +367,7 @@ const crud = async (
             .catch(error => {
               return {
                 data: {
-                  error,
+                  error: error?.response?.data,
                 },
               };
             });
@@ -417,7 +377,24 @@ const crud = async (
     }
 
     if (response?.data) {
-      delete response.data.error;
+      if (response.data.error) {
+        const {
+          error,
+        } = { ...response.data };
+
+        log(
+          'debug',
+          'indexer',
+          'request to opensearch',
+          {
+            params: _params,
+            error,
+          },
+        );
+
+        delete response.data.error;
+      }
+
       response = response.data;
     }
   }
@@ -464,28 +441,21 @@ const write = async (
       method: 'set',
       collection,
       id,
-      path:
-        is_update ?
-          `/${collection}/_update/${id}` :
-          undefined,
+      path: is_update ? `/${collection}/_update/${id}` : undefined,
       update_only,
       ...data,
     },
   );
 
-const delete_by_query = async (
+const remove = async (
   collection,
-  query,
-  params = {},
+  id,
 ) =>
   await crud(
     {
-      method: 'query',
+      method: 'delete',
       collection,
-      path: `/${collection}/_delete_by_query`,
-      query,
-      use_raw_data: true,
-      ...params,
+      id,
     },
   );
 
@@ -494,5 +464,5 @@ module.exports = {
   get,
   read,
   write,
-  delete_by_query,
+  remove,
 };

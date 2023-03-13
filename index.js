@@ -6,44 +6,26 @@ exports.handler = async (
   const config = require('config-yml');
 
   const {
-    get_params,
+    getParams,
   } = require('./utils');
 
   let {
     environment,
   } = { ...config };
 
-  environment =
-    process.env.ENVIRONMENT ||
-    environment;
+  environment = process.env.ENVIRONMENT || environment;
 
   // parse function event to req
   const req = {
-    body: {
-      ...(
-        event.body &&
-        JSON.parse(
-          event.body
-        )
-      ),
-    },
-    query: {
-      ...event.queryStringParameters,
-    },
-    params: {
-      ...event.pathParameters,
-    },
+    body: { ...(event.body && JSON.parse(event.body)) },
+    query: { ...event.queryStringParameters },
+    params: { ...event.pathParameters },
     method: event.requestContext?.http?.method,
-    url:
-      (event.routeKey || '')
-        .replace(
-          'ANY ',
-          '',
-        ),
+    url: (event.routeKey || '').replace('ANY ', ''),
     headers: event.headers,
   };
 
-  const params = get_params(req);
+  const params = getParams(req);
 
   let response;
 
@@ -63,14 +45,10 @@ exports.handler = async (
           else {
             response = data;
           }
-
           break;
         case 'assets-price':
           try {
-            response =
-              await require(`./services/${params.module}`)(
-                params,
-              );
+            response = await require(`./services/${params.module}`)(params);
           } catch (error) {
             response = {
               error: true,
@@ -78,12 +56,10 @@ exports.handler = async (
               message: error?.message,
             };
           }
-
           break;
         default:
           break;
       }
-
       break;
    default:
       break;

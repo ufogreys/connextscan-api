@@ -20,19 +20,7 @@ module.exports = async (
         },
       );
 
-    const _response =
-      await api
-        .get(
-          path,
-          { params },
-        )
-        .catch(error => {
-          return {
-            data: {
-              error,
-            },
-          };
-        });
+    const _response = await api.get(path, { params }).catch(error => { return { data: { error: error?.response?.data } }; });
 
     const {
       data,

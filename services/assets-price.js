@@ -8,8 +8,9 @@ const {
 } = require('./index');
 const coingecko = require('./coingecko');
 const {
-  equals_ignore_case,
   sleep,
+  equalsIgnoreCase,
+  toArray,
 } = require('../utils');
 const data = require('../data');
 
@@ -17,13 +18,10 @@ let {
   environment,
 } = { ...config };
 
-environment =
-  process.env.ENVIRONMENT ||
-  environment;
+environment = process.env.ENVIRONMENT || environment;
 
-const assets_data =
-  data?.assets?.[environment] ||
-  [];
+const chains_data = data?.chains?.[environment] || [];
+const assets_data = data?.assets?.[environment] || [];
 
 module.exports = async (
   params = {},
@@ -42,56 +40,20 @@ module.exports = async (
     assets,
   } = { ...params };
 
-  assets =
-    _.uniq(
-      (
-        Array.isArray(assets) ?
-          assets :
-          (
-            assets ||
-            asset ||
-            ''
-          )
-          .split(',')
-      )
-      .map(a =>
-        (a || '')
-          .trim()
-          .toLowerCase()
-      )
-      .filter(a => a)
-    );
+  assets = _.uniq(toArray(assets || asset), 'lower');
 
   if (assets.length > 0) {
-    const price_timestamp =
-      moment(
-        Number(timestamp) ||
-        current_time
-          .valueOf()
-      )
-      .startOf('day')
-      .valueOf();
+    const price_timestamp = moment(Number(timestamp) || current_time.valueOf()).startOf('day').valueOf();
 
     const cache =
-      current_time
-        .diff(
-          moment(
-            price_timestamp
-          ),
-          'hours',
-        ) > 0 &&
+      current_time.diff(moment(price_timestamp), 'hours') > 0 &&
       await read(
         collection,
         {
           bool: {
-            must:
-              [
-                {
-                  match: {
-                    price_timestamp,
-                  },
-                },
-              ],
+            must: [
+              { match: { price_timestamp } },
+            ],
             should:
               assets
                 .map(a => {
@@ -112,14 +74,29 @@ module.exports = async (
     const data =
       assets
         .map(a => {
-          const asset_data =
-            assets_data
-              .find(_a =>
-                equals_ignore_case(
-                  _a?.id,
-                  a,
-                )
-              );
+          let asset_data = assets_data.find(_a => equalsIgnoreCase(_a?.id, a));
+
+          if (!asset_data) {
+            const chain_data = chains_data.evm.find(c => equalsIgnoreCase(_.head(c.provider_params)?.nativeCurrency?.symbol, a));
+
+            if (chain_data) {
+              const {
+                provider_params,
+                coingecko_id,
+                gas_coingecko_id,
+              } = { ...chain_data };
+
+              const {
+                nativeCurrency,
+              } = { ..._.head(provider_params) };
+
+              asset_data = {
+                id: a,
+                ...nativeCurrency,
+                coingecko_id: gas_coingecko_id || coingecko_id,
+              };
+            }
+          }
 
           const {
             id,
@@ -131,25 +108,14 @@ module.exports = async (
             id: `${id}_${price_timestamp}`,
             asset_id: id,
             coingecko_id,
-            price:
-              is_stablecoin ?
-                1 :
-                undefined,
+            price: is_stablecoin ? 1 : undefined,
           };
         });
 
     if (cache?.data) {
-      cache.data
-        .filter(d => d)
+      toArray(cache.data)
         .forEach(d => {
-          const index =
-            data
-              .findIndex(_d =>
-                equals_ignore_case(
-                  _d.asset_id,
-                  d.asset_id,
-                )
-              );
+          const index = data.findIndex(_d => equalsIgnoreCase(_d.asset_id, d.asset_id));
 
           if (index > -1) {
             data[index] = {
@@ -160,25 +126,11 @@ module.exports = async (
         });
     }
 
-    const updated_at_threshold =
-      current_time
-        .subtract(
-          1,
-          'hours',
-        )
-        .valueOf();
+    const updated_at_threshold = current_time.subtract(1, 'hours').valueOf();
 
-    const to_update_data =
-      data
-        .filter(d =>
-          !d?.updated_at ||
-          d.updated_at < updated_at_threshold
-        );
+    const to_update_data = data.filter(d => !d?.updated_at || d.updated_at < updated_at_threshold);
 
-    const coingecko_ids =
-      to_update_data
-        .map(d => d?.coingecko_id)
-        .filter(id => id);
+    const coingecko_ids = toArray(to_update_data.map(d => d?.coingecko_id));
 
     if (coingecko_ids.length > 0) {
       let _data;
@@ -190,23 +142,12 @@ module.exports = async (
               `/coins/${id}/history`,
               {
                 id,
-                date:
-                  moment(
-                    Number(timestamp)
-                  )
-                  .format('DD-MM-YYYY'),
+                date: moment(Number(timestamp)).format('DD-MM-YYYY'),
                 localization: 'false',
               },
             );
 
-          _data =
-            _.concat(
-              _data,
-              Array.isArray(_response) ?
-                _response :
-                [],
-            )
-            .filter(d => d);
+          _data = toArray(_.concat(_data, response));
         }
       }
       else {
@@ -215,22 +156,16 @@ module.exports = async (
             '/coins/markets',
             {
               vs_currency: currency,
-              ids:
-                coingecko_ids
-                  .join(','),
+              ids: coingecko_ids.join(','),
               per_page: 250,
             },
           );
 
-        _data =
-          Array.isArray(_response) ?
-            _response :
-            [];
+        _data = toArray(_response);
       }
 
       // update data from coingecko
-      _data
-        .filter(d => d)
+      toArray(_data)
         .map(d => {
           const {
             id,
@@ -238,11 +173,7 @@ module.exports = async (
             current_price,
           } = { ...d };
 
-          const asset_data =
-            assets_data
-              .find(a =>
-                a?.coingecko_id === id
-              );
+          const asset_data = assets_data.find(a => a?.coingecko_id === id) || data.find(d => d?.coingecko_id === id);
 
           const {
             name,
@@ -250,20 +181,18 @@ module.exports = async (
             image,
             is_stablecoin,
           } = { ...asset_data };
+          let {
+            asset_id,
+          } = { ...asset_data };
 
-          let price =
-            market_data?.current_price?.[currency] ||
-            current_price;
+          asset_id = asset_id || asset_data?.id;
 
-          price =
-            !price &&
-            is_stablecoin ?
-              1 :
-              price;
+          let price = market_data?.current_price?.[currency] || current_price;
+          price = !price && is_stablecoin ? 1 : price;
 
           return {
-            id: `${asset_data?.id}_${price_timestamp}`,
-            asset_id: asset_data?.id,
+            id: `${asset_id}_${price_timestamp}`,
+            asset_id,
             coingecko_id: id,
             name,
             symbol,
@@ -272,14 +201,7 @@ module.exports = async (
           };
         })
         .forEach(d => {
-          const index =
-            data
-              .findIndex(_d =>
-                equals_ignore_case(
-                  _d.asset_id,
-                  d.asset_id,
-                )
-              );
+          const index = data.findIndex(_d => equalsIgnoreCase(_d.asset_id, d.asset_id));
 
           if (index > -1) {
             data[index] = {
@@ -290,16 +212,7 @@ module.exports = async (
         });
     }
 
-    const updated_data =
-      data
-        .filter(d =>
-          d?.asset_id &&
-          ('symbol' in d) &&
-          (
-            !d.updated_at ||
-            d.updated_at < updated_at_threshold
-          )
-        );
+    const updated_data = data.filter(d =>  d?.asset_id && ('symbol' in d) && (!d.updated_at || d.updated_at < updated_at_threshold));
 
     if (updated_data.length > 0) {
       const synchronous = updated_data.length < 5;
@@ -309,41 +222,16 @@ module.exports = async (
           asset_id,
         } = { ...d };
 
-        const updated_at =
-          moment()
-            .valueOf();
-
-        const price_timestamp =
-          moment(
-            Number(timestamp) ||
-            updated_at
-          )
-          .startOf('day')
-          .valueOf();
-
+        const updated_at = moment().valueOf();
+        const price_timestamp = moment(Number(timestamp) || updated_at).startOf('day').valueOf();
         const id = `${asset_id}_${price_timestamp}`;
-
-        const write_data =
-          {
-            ...d,
-            id,
-            price_timestamp,
-            updated_at,
-          };
+        const write_data = { ...d, id, price_timestamp, updated_at };
 
         if (synchronous) {
-          await write(
-            collection,
-            id,
-            write_data,
-          );
+          await write(collection, id, write_data);
         }
         else {
-          write(
-            collection,
-            id,
-            write_data,
-          );
+          write(collection, id, write_data);
         }
       }
 

@@ -1,4 +1,4 @@
-const normalize_obj = object =>
+const normalizeObject = object =>
   Array.isArray(object) ?
     object :
     Object.fromEntries(
@@ -7,7 +7,7 @@ const normalize_obj = object =>
           [
             k,
             typeof v === 'object' ?
-              normalize_obj(v) :
+              normalizeObject(v) :
               typeof v === 'boolean' ?
                 v :
                 !isNaN(v) ?
@@ -18,5 +18,5 @@ const normalize_obj = object =>
     );
 
 module.exports = {
-  normalize_obj,
+  normalizeObject,
 };
