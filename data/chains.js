@@ -248,6 +248,7 @@ module.exports = {
         color: '#28a0f0',
         website: 'https://arbitrum.io',
         coingecko_id: 'arbitrum',
+        gas_coingecko_id: 'ethereum',
       },
       {
         id: 'gnosis',
@@ -290,6 +291,7 @@ module.exports = {
         color: '#48a9a6',
         website: 'https://gnosischain.com',
         coingecko_id: 'gnosis',
+        gas_coingecko_id: 'xdai',
       },
       /*
       {
@@ -328,6 +330,7 @@ module.exports = {
         color: '#28a0f0',
         website: 'https://arbitrum.io',
         coingecko_id: 'arbitrum',
+        gas_coingecko_id: 'ethereum',
       },
       */
       /*
@@ -611,6 +614,7 @@ module.exports = {
         color: '#28a0f0',
         website: 'https://arbitrum.io',
         coingecko_id: 'arbitrum',
+        gas_coingecko_id: 'ethereum',
       },
       {
         id: 'consensys',

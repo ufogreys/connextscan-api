@@ -40,7 +40,7 @@ module.exports = async (
     assets,
   } = { ...params };
 
-  assets = _.uniq(toArray(assets || asset), 'lower');
+  assets = _.uniq(toArray(assets || asset, 'lower'));
 
   if (assets.length > 0) {
     const price_timestamp = moment(Number(timestamp) || current_time.valueOf()).startOf('day').valueOf();
@@ -101,6 +101,9 @@ module.exports = async (
           const {
             id,
             coingecko_id,
+            name,
+            symbol,
+            image,
             is_stablecoin,
           } = { ...asset_data };
 
@@ -108,6 +111,9 @@ module.exports = async (
             id: `${id}_${price_timestamp}`,
             asset_id: id,
             coingecko_id,
+            name,
+            symbol,
+            image,
             price: is_stablecoin ? 1 : undefined,
           };
         });
@@ -130,7 +136,7 @@ module.exports = async (
 
     const to_update_data = data.filter(d => !d?.updated_at || d.updated_at < updated_at_threshold);
 
-    const coingecko_ids = toArray(to_update_data.map(d => d?.coingecko_id));
+    const coingecko_ids = _.uniq(toArray(to_update_data.map(d => d?.coingecko_id)));
 
     if (coingecko_ids.length > 0) {
       let _data;
@@ -147,7 +153,7 @@ module.exports = async (
               },
             );
 
-          _data = toArray(_.concat(_data, response));
+          _data = toArray(_.concat(_data, _response));
         }
       }
       else {
@@ -201,18 +207,20 @@ module.exports = async (
           };
         })
         .forEach(d => {
-          const index = data.findIndex(_d => equalsIgnoreCase(_d.asset_id, d.asset_id));
+          for (let i = 0; i < data.length; i++) {
+            const _d = data[i];
 
-          if (index > -1) {
-            data[index] = {
-              ...data[index],
-              ...d,
-            };
+            if (equalsIgnoreCase(_d.asset_id, d.asset_id) || equalsIgnoreCase(_d.coingecko_id, d.coingecko_id)) {
+              data[i] = {
+                ...d,
+                ...data[i],
+              };
+            }
           }
         });
     }
 
-    const updated_data = data.filter(d =>  d?.asset_id && ('symbol' in d) && (!d.updated_at || d.updated_at < updated_at_threshold));
+    const updated_data = data.filter(d => d?.asset_id && ('symbol' in d) && (!d.updated_at || d.updated_at < updated_at_threshold));
 
     if (updated_data.length > 0) {
       const synchronous = updated_data.length < 5;
