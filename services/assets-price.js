@@ -134,7 +134,7 @@ module.exports = async (
 
     const updated_at_threshold = current_time.subtract(1, 'hours').valueOf();
 
-    const to_update_data = data.filter(d => !d?.updated_at || d.updated_at < updated_at_threshold);
+    const to_update_data = data.filter(d => !d?.updated_at || d.updated_at < updated_at_threshold || typeof d.price !== 'number');
 
     const coingecko_ids = _.uniq(toArray(to_update_data.map(d => d?.coingecko_id)));
 
@@ -207,13 +207,20 @@ module.exports = async (
           };
         })
         .forEach(d => {
+          const {
+            asset_id,
+            coingecko_id,
+            price,
+          } = { ...d };
+
           for (let i = 0; i < data.length; i++) {
             const _d = data[i];
 
-            if (equalsIgnoreCase(_d.asset_id, d.asset_id) || equalsIgnoreCase(_d.coingecko_id, d.coingecko_id)) {
+            if (equalsIgnoreCase(_d.asset_id, asset_id) || equalsIgnoreCase(_d.coingecko_id, coingecko_id)) {
               data[i] = {
                 ...d,
                 ...data[i],
+                price,
               };
             }
           }
