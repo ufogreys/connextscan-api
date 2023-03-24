@@ -7,7 +7,7 @@ else
 fi
 
 LAMBDA_FUNC_NAME=connext-${NETWORK}
-PROJECT_PATH=~/Desktop/connext/lambda/requester
+PROJECT_PATH=~/Desktop/connext/api/v1/requester
 
 cd ${PROJECT_PATH}
 zip -r ${LAMBDA_FUNC_NAME}.zip .

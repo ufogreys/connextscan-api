@@ -296,7 +296,7 @@ exports.handler = async (event, context, callback) => {
         // send request
         res = await requester.post(path, { ...params })
           // set response data from error handled by exception
-          .catch(error => { return { data: { error } }; });
+          .catch(error => { return { data: { error: error?.response?.data } }; });
 
         /*if (params.query?.includes('transactions(')) {
           if (res?.data?.data?.transactions?.length > 0 || res?.data?.data?.user?.transactions?.length > 0) {
