@@ -617,17 +617,17 @@ module.exports = {
         gas_coingecko_id: 'ethereum',
       },
       {
-        id: 'consensys',
+        id: 'linea',
         chain_id: 59140,
         domain_id: '1668247156',
-        name: 'ConsenSys zkEVM',
-        short_name: 'ZKEVM',
+        name: 'Linea',
+        short_name: 'LINEA',
         provider_params: [
           {
             chainId: '0xe704',
-            chainName: 'ConsenSys zkEVM',
+            chainName: 'Linea Goerli',
             rpcUrls: [
-              'https://consensys-zkevm-goerli-prealpha.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161',
+              'https://rpc.goerli.linea.build',
             ],
             nativeCurrency: {
               name: 'Ethereum',
@@ -635,13 +635,13 @@ module.exports = {
               decimals: 18,
             },
             blockExplorerUrls: [
-              'https://explorer.goerli.zkevm.consensys.net',
+              'https://explorer.goerli.linea.build',
             ],
           },
         ],
         explorer: {
           name: 'BlockScout',
-          url: 'https://explorer.goerli.zkevm.consensys.net',
+          url: 'https://explorer.goerli.linea.build',
           icon: '/logos/explorers/blockscout.png',
           block_path: '/block/{block}',
           address_path: '/address/{address}',
@@ -649,9 +649,9 @@ module.exports = {
           contract_0_path: '/address/{address}',
           transaction_path: '/tx/{tx}',
         },
-        image: '/logos/chains/consensys.png',
-        color: '#264cc4',
-        website: 'https://consensys.net',
+        image: '/logos/chains/linea.png',
+        color: '#1d1d1d',
+        website: 'https://linea.build',
         coingecko_id: '',
         gas_coingecko_id: 'ethereum',
       },
