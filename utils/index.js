@@ -49,21 +49,10 @@ const split = (
 ) =>
   (typeof string !== 'string' && ![undefined, null].includes(string) ?
     [string] :
-    (typeof string === 'string' ?
-      string :
-      ''
-    )
-    .split(delimiter)
-    .map(s =>
-      toCase(
-        s,
-        to_case,
-      )
-    )
+    (typeof string === 'string' ? string : '').split(delimiter).map(s => toCase(s, to_case))
   )
   .filter(s =>
-    !filter_blank ||
-    s
+    !filter_blank || s
   );
 
 const toArray = (
@@ -75,14 +64,10 @@ const toArray = (
   Array.isArray(x) ?
     x
       .map(v =>
-        toCase(
-          v,
-          to_case,
-        )
+        toCase(v, to_case)
       )
       .filter(v =>
-        !filter_blank ||
-        v
+        !filter_blank || v
       ) :
     split(
       x,
@@ -95,27 +80,13 @@ const find = (
   x,
   list = [],
 ) =>
-  list
-    .find(_x =>
-      typeof x === 'string' ?
-        equalsIgnoreCase(
-          _x,
-          x,
-        ) :
-        _x === x
-    );
+  list.find(_x => typeof x === 'string' ? equalsIgnoreCase(_x, x) : _x === x);
 
 const includesStringList = (
   x,
   list = [],
 ) =>
-  toArray(list)
-    .findIndex(s =>
-      toArray(x)
-        .findIndex(_x =>
-          _x.includes(s)
-        ) > -1
-    ) > -1;
+  toArray(list).findIndex(s => toArray(x).findIndex(_x => _x.includes(s)) > -1) > -1;
 
 module.exports = {
   getParams,

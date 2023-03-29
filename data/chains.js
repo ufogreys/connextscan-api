@@ -40,6 +40,7 @@ module.exports = {
         color: '#636890',
         website: 'https://ethereum.org',
         coingecko_id: 'ethereum',
+        unwrapper_contract: '0x268682b7D9992aE7e2ca4A8bCc9D9655FB06056F',
       },
       {
         id: 'binance',
@@ -80,6 +81,7 @@ module.exports = {
         color: '#e8b30b',
         website: 'https://bnbchain.world',
         coingecko_id: 'binancecoin',
+        unwrapper_contract: '0x2c7B8c1a13F2a7854B9299E4d22809A8B1E05De5',
       },
       {
         id: 'polygon',
@@ -123,6 +125,7 @@ module.exports = {
         color: '#8247e5',
         website: 'https://polygon.technology',
         coingecko_id: 'matic-network',
+        unwrapper_contract: '0x7E8F8B2dA3dc5Ad9c9Dfd1A832331A039d4f3f74',
       },
       /*
       {
@@ -163,6 +166,7 @@ module.exports = {
         color: '#e84143',
         website: 'https://avax.network',
         coingecko_id: 'avalanche-2',
+        unwrapper_contract: '',
       },
       */
       {
@@ -206,6 +210,7 @@ module.exports = {
         website: 'https://optimism.io',
         coingecko_id: 'optimism',
         gas_coingecko_id: 'ethereum',
+        unwrapper_contract: '0x7Fe09d217d646a6213e51b237670Bc326188cB93',
       },
       {
         id: 'arbitrum',
@@ -249,6 +254,7 @@ module.exports = {
         website: 'https://arbitrum.io',
         coingecko_id: 'arbitrum',
         gas_coingecko_id: 'ethereum',
+        unwrapper_contract: '0x429b9eb01362b2799131EfCC44319689b662999D',
       },
       {
         id: 'gnosis',
@@ -292,6 +298,7 @@ module.exports = {
         website: 'https://gnosischain.com',
         coingecko_id: 'gnosis',
         gas_coingecko_id: 'xdai',
+        unwrapper_contract: '0x642c27a96dFFB6f21443A89b789a3194Ff8399fa',
       },
       /*
       {
@@ -331,6 +338,7 @@ module.exports = {
         website: 'https://arbitrum.io',
         coingecko_id: 'arbitrum',
         gas_coingecko_id: 'ethereum',
+        unwrapper_contract: '',
       },
       */
       /*
@@ -371,6 +379,7 @@ module.exports = {
         color: '#1869ff',
         website: 'https://fantom.foundation',
         coingecko_id: 'fantom',
+        unwrapper_contract: '',
       },
       */
       /*
@@ -412,6 +421,7 @@ module.exports = {
         color: '#53cbc8',
         website: 'https://moonbeam.network',
         coingecko_id: 'moonbeam',
+        unwrapper_contract: '',
       },
       */
     ],
@@ -456,6 +466,7 @@ module.exports = {
         color: '#636890',
         website: 'https://goerli.net',
         coingecko_id: 'ethereum',
+        unwrapper_contract: '0xa6633d369A9C4C8A442ef104E8e293DA7b352Acd',
       },
       /*
       {
@@ -495,6 +506,7 @@ module.exports = {
         color: '#e8b30b',
         website: 'https://bnbchain.world',
         coingecko_id: 'binancecoin',
+        unwrapper_contract: '',
       },
       */
       {
@@ -536,6 +548,7 @@ module.exports = {
         color: '#8247e5',
         website: 'https://polygon.technology',
         coingecko_id: 'matic-network',
+        unwrapper_contract: '0x1e0Db00EB08ceC7FFdA03c0Dbf224193E1563844',
       },
       {
         id: 'optimism',
@@ -576,6 +589,7 @@ module.exports = {
         website: 'https://optimism.io',
         coingecko_id: 'ethereum',
         gas_coingecko_id: 'ethereum',
+        unwrapper_contract: '0x08bDeFD0e4878A814Cb2fd11C033F3947251689f',
       },
       {
         id: 'arbitrum',
@@ -615,6 +629,7 @@ module.exports = {
         website: 'https://arbitrum.io',
         coingecko_id: 'arbitrum',
         gas_coingecko_id: 'ethereum',
+        unwrapper_contract: '0x18BBF96BC8014aA93cbf1A5Bce005a485b5C2C4a',
       },
       {
         id: 'linea',
@@ -654,6 +669,7 @@ module.exports = {
         website: 'https://linea.build',
         coingecko_id: '',
         gas_coingecko_id: 'ethereum',
+        unwrapper_contract: '0x2Eee7cB087c0430e40991f7E37De44Ec248a9F45',
       },
       {
         id: 'zksync',
@@ -693,6 +709,7 @@ module.exports = {
         website: 'https://zksync.io',
         coingecko_id: '',
         gas_coingecko_id: 'ethereum',
+        unwrapper_contract: '',
       },
       /*
       {
@@ -732,6 +749,7 @@ module.exports = {
         color: '#53cbc8',
         website: 'https://moonbeam.network',
         coingecko_id: 'moonbeam',
+        unwrapper_contract: '',
       },
       */
     ],

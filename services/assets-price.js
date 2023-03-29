@@ -55,14 +55,13 @@ module.exports = async (
               { match: { price_timestamp } },
             ],
             should:
-              assets
-                .map(a => {
-                  return {
-                    match: {
-                      asset_id: a,
-                    },
-                  };
-                }),
+              assets.map(a => {
+                return {
+                  match: {
+                    asset_id: a,
+                  },
+                };
+              }),
             minimum_should_match: 1,
           },
         },
@@ -72,51 +71,50 @@ module.exports = async (
       );
 
     const data =
-      assets
-        .map(a => {
-          let asset_data = assets_data.find(_a => equalsIgnoreCase(_a?.id, a));
+      assets.map(a => {
+        let asset_data = assets_data.find(_a => equalsIgnoreCase(_a?.id, a));
 
-          if (!asset_data) {
-            const chain_data = chains_data.evm.find(c => equalsIgnoreCase(_.head(c.provider_params)?.nativeCurrency?.symbol, a));
+        if (!asset_data) {
+          const chain_data = chains_data.evm.find(c => equalsIgnoreCase(_.head(c.provider_params)?.nativeCurrency?.symbol, a));
 
-            if (chain_data) {
-              const {
-                provider_params,
-                coingecko_id,
-                gas_coingecko_id,
-              } = { ...chain_data };
+          if (chain_data) {
+            const {
+              provider_params,
+              coingecko_id,
+              gas_coingecko_id,
+            } = { ...chain_data };
 
-              const {
-                nativeCurrency,
-              } = { ..._.head(provider_params) };
+            const {
+              nativeCurrency,
+            } = { ..._.head(provider_params) };
 
-              asset_data = {
-                id: a,
-                ...nativeCurrency,
-                coingecko_id: gas_coingecko_id || coingecko_id,
-              };
-            }
+            asset_data = {
+              id: a,
+              ...nativeCurrency,
+              coingecko_id: gas_coingecko_id || coingecko_id,
+            };
           }
+        }
 
-          const {
-            id,
-            coingecko_id,
-            name,
-            symbol,
-            image,
-            is_stablecoin,
-          } = { ...asset_data };
+        const {
+          id,
+          coingecko_id,
+          name,
+          symbol,
+          image,
+          is_stablecoin,
+        } = { ...asset_data };
 
-          return {
-            id: `${id}_${price_timestamp}`,
-            asset_id: id,
-            coingecko_id,
-            name,
-            symbol,
-            image,
-            price: is_stablecoin ? 1 : undefined,
-          };
-        });
+        return {
+          id: `${id}_${price_timestamp}`,
+          asset_id: id,
+          coingecko_id,
+          name,
+          symbol,
+          image,
+          price: is_stablecoin ? 1 : undefined,
+        };
+      });
 
     if (cache?.data) {
       toArray(cache.data)
@@ -133,9 +131,7 @@ module.exports = async (
     }
 
     const updated_at_threshold = current_time.subtract(1, 'hours').valueOf();
-
     const to_update_data = data.filter(d => !d?.updated_at || d.updated_at < updated_at_threshold || typeof d.price !== 'number');
-
     const coingecko_ids = _.uniq(toArray(to_update_data.map(d => d?.coingecko_id)));
 
     if (coingecko_ids.length > 0) {
