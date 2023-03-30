@@ -46,7 +46,7 @@ module.exports = async (
     const price_timestamp = moment(Number(timestamp) || current_time.valueOf()).startOf('day').valueOf();
 
     const cache =
-      current_time.diff(moment(price_timestamp), 'hours') > 0 &&
+      current_time.diff(moment(price_timestamp), 'hours', true) > 0 &&
       await read(
         collection,
         {
@@ -103,6 +103,7 @@ module.exports = async (
           symbol,
           image,
           is_stablecoin,
+          default_price,
         } = { ...asset_data };
 
         return {
@@ -112,7 +113,7 @@ module.exports = async (
           name,
           symbol,
           image,
-          price: is_stablecoin ? 1 : undefined,
+          price: is_stablecoin ? 1 : default_price || undefined,
         };
       });
 
@@ -216,14 +217,14 @@ module.exports = async (
               data[i] = {
                 ...d,
                 ...data[i],
-                price,
+                price: price || _d.price,
               };
             }
           }
         });
     }
 
-    const updated_data = data.filter(d => d?.asset_id && ('symbol' in d) && (!d.updated_at || d.updated_at < updated_at_threshold));
+    const updated_data = data.filter(d => d?.asset_id && ('symbol' in d) && typeof d.price === 'number' && (!d.updated_at || d.updated_at < updated_at_threshold));
 
     if (updated_data.length > 0) {
       const synchronous = updated_data.length < 5;
