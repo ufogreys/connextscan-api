@@ -824,7 +824,6 @@ module.exports = {
             symbol: 'nextWETH',
             image: '/logos/assets/nextweth.png',
           },
-          is_pool: true,
         },
         {
           contract_address: '0x74c6FD7D2Bc6a8F0Ebd7D78321A95471b8C2B806',
@@ -838,7 +837,6 @@ module.exports = {
             symbol: 'nextWETH',
             image: '/logos/assets/nextweth.png',
           },
-          is_pool: true,
         },
         {
           contract_address: '0x1346786E6A5e07b90184a1Ba58E55444b99DC4A2',
