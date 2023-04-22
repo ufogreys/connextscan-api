@@ -43,33 +43,31 @@ module.exports = {
         unwrapper_contract: '0x268682b7D9992aE7e2ca4A8bCc9D9655FB06056F',
       },
       {
-        id: 'binance',
-        chain_id: 56,
+        id: 'XChain',
+        chain_id: 911,
         domain_id: '6450786',
-        name: 'BNB Chain',
-        short_name: 'BNB',
+        name: 'XChain',
+        short_name: 'XChain',
         provider_params: [
           {
             chainId: '0x38',
-            chainName: 'BNB Chain',
+            chainName: 'XChain',
             rpcUrls: [
-              'https://rpc.ankr.com/bsc',
-              'https://1rpc.io/bnb',
-              'https://bscrpc.com',
+              'https://testnet.xchain.finance/ext/bc/XChain/rpc'
             ],
             nativeCurrency: {
-              name: 'BNB',
-              symbol: 'BNB',
+              name: 'XChain',
+              symbol: 'XChain',
               decimals: 18,
             },
             blockExplorerUrls: [
-              'https://bscscan.com',
+              'https://explorer.xchain.finance',
             ],
           },
         ],
         explorer: {
-          name: 'BscScan',
-          url: 'https://bscscan.com',
+          name: 'XChainScan',
+          url: 'https://explorer.xchain.finance',
           icon: '/logos/explorers/bscscan.png',
           block_path: '/block/{block}',
           address_path: '/address/{address}',
